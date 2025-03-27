@@ -129,25 +129,33 @@ div.container-fluid {
     margin: 0 60px;
 }
 
-.titulo__sobre__nos {
+.titulo {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 5rem;
 }
 
-.paragrafo__sobre__nos {
+.paragrafo {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     color: #495057;
     font-weight: 600;
-    margin: 0 0 8px;
+    margin: 0 0 5px;
 }
 
-.texto__sobre__nos {
+.texto {
     font-family: 'Oswald', sans-serif;
     font-size: calc(1.325rem + .9vw);
     font-weight: 700;
+}
+
+.paragrafo__classes {
+    font-size: 15px;
+}
+
+.texto__classes {
+    font-size: 29px;
 }
 
 .sobre__nos {
@@ -295,4 +303,62 @@ div.container-fluid {
     align-items: center; /* Alinha os itens verticalmente */
     gap: 20px; /* Dá um espaço entre o número e o título */
     width: 100%;
+}
+
+.titulo__classes {
+    padding-top: 20px;
+}
+
+
+
+
+
+
+
+/* Garantir que o carrossel ocupe 100% da largura da tela */
+.carousel-inner {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Imagens do carrossel devem preencher completamente o contêiner */
+.carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh; /* Ocupa toda a altura da tela */
+}
+
+/* Caso queira fazer o carrossel se mover mais suavemente, pode adicionar uma transição */
+.carousel-item {
+    transition: transform 0.5s ease-in-out;
+}
+
+
+
+.carrossel-container {
+    width: 80%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.carrossel-wrapper {
+    display: flex;
+    animation: move-right 30s linear infinite;
+    width: calc(100% * 6);
+}
+
+
+.carrossel-image {
+    width: 0 0 33.33%; /* Cada imagem ocupa 1/6 da largura, 100% / 6 */
+    object-fit: cover; /* Ajusta a imagem para cobrir o espaço sem distorcer */
+    margin-right: 10px; /* Espaçamento entre as imagens */
+}
+
+@keyframes move-right {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-33.33%);
+    }
 }
