@@ -1,7 +1,12 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
 /* Contêiner principal para as imagens */
 .image-container {
     width: 100%;
-    height: 650px; /* Ajuste a altura conforme necessário */
+    height: 100vh; /* A altura é agora 100% da altura da tela */
     position: relative;
     overflow: hidden;
 }
@@ -12,10 +17,11 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh; /* Garante que a altura da imagem ocupe 100% da tela */
     object-fit: cover;
     opacity: 0; /* Imagens começam invisíveis */
-    transition: opacity 3s ease-in-out; /* Transição suave para a visibilidade */
+    transition: opacity 3s ease-in-out; 
+    background-position: center;
 }
 
 /* A classe 'active' faz com que a imagem se torne visível */
@@ -29,7 +35,7 @@
     left: 50%; 
     transform: translate(-50%, -50%); /* Ajusta para o centro exato */
     color: white; /* Cor do texto */
-    font-size:calc(1.575rem + 3.9vw);
+    font-size: calc(1.575rem + 3.9vw);
     font-weight: bold;
     font-family: "Oswald", sans-serif;
     z-index: 10;
@@ -39,7 +45,7 @@
     white-space: nowrap; /* Impede que o texto quebre em múltiplas linhas */
 }
 
-.btn-secondary {
+.btn {
     position: absolute;
     background-color: #495057;
     color: white;
@@ -53,42 +59,144 @@
     font-size: 1.25rem;
     padding: 15px 40px;
     border: none;
+    margin: 0 0 8px;
 }
 
-.btn-secondary:hover {
+.btn:hover {
     background-color: #FFF;
     color: #495057;
 }
 
+/* Estilo do Navbar */
+nav, .nav, .navbar-brand, .nav-link, .nav-item, #navbarNav {
+    font-family: 'Poppins', sans-serif;
+}
+
 .navbar {
-    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    padding: 16px 0; /* Padding inicial */
+    background-color: white; /* Mantém o fundo branco */
+    transition: padding 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+    box-sizing: border-box; /* Garante o comportamento correto das bordas e margens */
+}
+
+/* Quando rola a página para baixo */
+.navbar.scrolled {
+    padding: 10px 0; /* Reduz o padding quando rolar */
+    background-color: white; /* Fundo branco permanece */
+    box-shadow: 0 10px 30px -10px rgb(0 64 128 / 20%); /* Adiciona a sombra */
 }
 
 .navbar-brand {
-    font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    margin-left: 16px;
+    display: flex;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin: 0 16px 0 0;
     padding-top: 5px;
-    font-weight: 700;
+}
+
+.nav-item {
+    padding: 0 12px;
 }
 
 .nav-link {
-    font-family: "Poppins", sans-serif;
     color: #212121;
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    
+    color: #495057;
 }
 
 #navbarNav {
     display: flex;
     justify-content: flex-end;
-    margin-right: 30px;
 }
 
-.navbar {
+.navbar-expand-lg {
+    padding: 16.5px 0;
+}
+
+div.container-fluid {
+    margin: 0 60px;
+}
+
+.titulo__sobre__nos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+.paragrafo__sobre__nos {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: #495057;
+    font-weight: 600;
+    margin: 0 0 8px;
+}
+
+.texto__sobre__nos {
+    font-family: 'Oswald', sans-serif;
+    font-size: calc(1.325rem + .9vw);
+    font-weight: 700;
+}
+
+.sobre__nos {
+    display: flex;
+    flex-wrap: wrap; /* Permite que o conteúdo se ajuste em telas menores */
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 30px;
+    margin: 0 6%;
+    gap: 15px;
+}
+
+.introducao__sobre__nos {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    padding: 8px 48px 0px 0px;
+    margin: 0px 0px 0px;
+    max-width: 650px;
+}
+
+.lista__sobre__nos {
+    font-family: "Poppins", sans-serif;
+    padding-left: 16px;
+    max-width: 650px;
+}
+
+.item__lista {
+    padding: 9px 0px;
+    font-size: 16px;
+}
+
+.btn__section__1 {
+    background-color: #495057;
+    color: white;
+    border-radius: 7px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 15px 40px;
+    border: none;
+    margin-top: 30px;
+}
+
+.btn__section__1:hover {
     background-color: #FFF;
+    color: #495057;
+    border:solid 2px #495057;
+}
+
+.img__puxada {
+    height: 200px;
+    width: 200px;
 }
 
