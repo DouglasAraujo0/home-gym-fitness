@@ -1,3 +1,4 @@
+/* Estilos gerais e reset de margens */
 * {
     margin: 0;
     box-sizing: border-box;
@@ -8,7 +9,7 @@
     width: 100%;
     height: 100vh; /* A altura é agora 100% da altura da tela */
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Impede que a imagem ultrapasse as bordas da div */
 }
 
 /* Estilo para cada imagem */
@@ -17,10 +18,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* Garante que a altura da imagem ocupe 100% da tela */
-    object-fit: cover;
+    height: 120vh; /* Aumentei a altura para 120% da altura da tela */
+    object-fit: cover; /* Garante que a imagem cubra todo o contêiner sem distorcer */
     opacity: 0; /* Imagens começam invisíveis */
-    transition: opacity 3s ease-in-out; 
+    transition: opacity 3s ease-in-out, transform 0.4s ease; /* Transição suave para opacidade e zoom */
     background-position: center;
 }
 
@@ -29,22 +30,24 @@
     opacity: 1; /* Quando 'active', a imagem fica visível */
 }
 
+/* Ajuste de sobreposição do texto */
 .text-overlay {
     position: absolute;
-    top: 40%; 
-    left: 50%; 
+    top: 40%;
+    left: 50%;
     transform: translate(-50%, -50%); /* Ajusta para o centro exato */
-    color: white; /* Cor do texto */
+    color: white;
     font-size: calc(1.575rem + 3.9vw);
     font-weight: bold;
     font-family: "Oswald", sans-serif;
     z-index: 10;
-    text-align: center; /* Alinha o texto no centro */
+    text-align: center;
     max-width: 90%; /* Limita a largura do texto */
-    line-height: 1.2; /* Ajusta a altura da linha */
+    line-height: 1.2;
     white-space: nowrap; /* Impede que o texto quebre em múltiplas linhas */
 }
 
+/* Ajuste do botão "JOIN NOW" */
 .btn {
     position: absolute;
     background-color: #495057;
@@ -53,9 +56,9 @@
     font-family: "Oswald", sans-serif;
     font-weight: 500;
     z-index: 10;
-    top: 52%; 
-    left: 50%; 
-    transform: translateX(-50%); /* Ajusta para o centro exato */
+    top: 52%;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 1.25rem;
     padding: 15px 40px;
     border: none;
@@ -80,7 +83,6 @@ nav, .nav, .navbar-brand, .nav-link, .nav-item, #navbarNav {
     padding: 16px 0; /* Padding inicial */
     background-color: white; /* Mantém o fundo branco */
     transition: padding 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
-    box-sizing: border-box; /* Garante o comportamento correto das bordas e margens */
 }
 
 /* Quando rola a página para baixo */
@@ -150,34 +152,35 @@ div.container-fluid {
 
 .sobre__nos {
     display: flex;
-    flex-wrap: wrap; /* Permite que o conteúdo se ajuste em telas menores */
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
-    padding-top: 30px;
+    padding-top: 50px;
     margin: 0 6%;
     gap: 15px;
 }
 
 .introducao__sobre__nos {
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     padding: 8px 48px 0px 0px;
     margin: 0px 0px 0px;
-    max-width: 650px;
+    max-width: 550px;
 }
 
 .lista__sobre__nos {
     font-family: "Poppins", sans-serif;
     padding-left: 16px;
-    max-width: 650px;
+    max-width: 550px;
+    margin-top: 15px;
 }
 
 .item__lista {
     padding: 9px 0px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
-.btn__section__1 {
+.btn__section__2 {
     background-color: #495057;
     color: white;
     border-radius: 7px;
@@ -186,17 +189,110 @@ div.container-fluid {
     font-size: 1rem;
     padding: 15px 40px;
     border: none;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
-.btn__section__1:hover {
+.btn__section__2:hover {
     background-color: #FFF;
     color: #495057;
-    border:solid 2px #495057;
+    border: solid 2px #495057;
 }
 
+.imagem__puxada__zoom {
+    height: 465px;
+    width: 365px;
+    margin-right: 120px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
 .img__puxada {
-    height: 200px;
-    width: 200px;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s linear;
+    object-fit: cover;
 }
 
+.imagem__puxada__zoom:hover .img__puxada {
+    transform: scale(1.2);
+}
+
+.banners {
+    padding: 120px 6%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.container__banner__1,
+.container__banner__2, 
+.container__banner__3 {
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(201, 192, 192, 0.91);
+    position: relative;
+
+}
+
+.container__banner__1 .num__1, 
+.container__banner__2 .num__2,
+.container__banner__3 .num__3 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-right: 6px;
+}
+
+.container__banner__1 .num__1, 
+.container__banner__2 .num__2,
+.container__banner__3 .num__3 {
+    border-right: solid 3px #495057;
+    height: 150px;
+    display: flex;
+    align-items: center;
+
+}
+
+
+.container__banner__1 .banner__1 h4, 
+.container__banner__2 .banner__2 h4,
+.container__banner__3 .banner__3 h4{
+    font-family: "Poppins", sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.container__banner__1 .banner__1 h4,
+.container__banner__3 .banner__3 h4 {
+    margin-left: 50px;
+    margin-bottom: 15px;
+}
+.container__banner__2 .banner__2 h4 {
+    margin-left: 50px;
+    margin-top: 1px;
+}
+
+.container__banner__1 .banner__1 p, 
+.container__banner__2 .banner__2 p,
+.container__banner__3 .banner__3 p{
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: #495057;
+    font-weight: 400;
+    margin-left: 50px;
+}
+
+.container__banner__1,
+.container__banner__2,
+.container__banner__3 {
+    display: flex; /* Faz os elementos ficarem lado a lado */
+    align-items: center; /* Alinha os itens verticalmente */
+    gap: 20px; /* Dá um espaço entre o número e o título */
+    width: 100%;
+}
