@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+
 /* Contêiner principal para as imagens */
 .image-container {
     width: 100%;
@@ -158,6 +160,10 @@ div.container-fluid {
     font-size: 29px;
 }
 
+.titulo__classes__2 {
+    margin-bottom: 50px;
+}
+
 .sobre__nos {
     display: flex;
     flex-wrap: wrap;
@@ -306,11 +312,8 @@ div.container-fluid {
 }
 
 .titulo__classes {
-    padding-top: 20px;
+    padding: 0px 0px 48px 0px;
 }
-
-
-
 
 
 
@@ -325,7 +328,7 @@ div.container-fluid {
 .carousel-item img {
     object-fit: cover;
     width: 100%;
-    height: 100vh; /* Ocupa toda a altura da tela */
+    height: 100vh;
 }
 
 /* Caso queira fazer o carrossel se mover mais suavemente, pode adicionar uma transição */
@@ -335,30 +338,280 @@ div.container-fluid {
 
 
 
-.carrossel-container {
-    width: 80%;
-    overflow: hidden;
-    margin: 0 auto;
-}
-
+/* Wrapper para as imagens */
 .carrossel-wrapper {
     display: flex;
-    animation: move-right 30s linear infinite;
-    width: calc(100% * 6);
+    transition: transform 1s ease-in-out;
+    width: 100%; /* Ajuste para mostrar 3 imagens */
+    gap: 24px; /* Espaçamento entre as imagens */
+    animation: move-carousel 15s infinite;
+    
 }
 
+/* Contêiner do carrossel */
+.carrossel-container {
+    width: 88%; /* Largura total do carrossel */
+    overflow: hidden; /* Esconde as imagens fora da área visível */
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 100px; /* Ajuste conforme necessário */
+    display: flex;
+    justify-content: center; /* Garante que o carrossel esteja centralizado */
+}
 
+/* Imagem do carrossel */
 .carrossel-image {
-    width: 0 0 33.33%; /* Cada imagem ocupa 1/6 da largura, 100% / 6 */
-    object-fit: cover; /* Ajusta a imagem para cobrir o espaço sem distorcer */
-    margin-right: 10px; /* Espaçamento entre as imagens */
+    flex: 0 0 auto; /* Cada imagem ocupa 1/3 da largura do contêiner */
+    width: calc(33.33% - 20px); /* A largura das imagens com espaçamento entre elas */
+    height: 500px; /* Altura fixa para o carrossel */
 }
 
-@keyframes move-right {
+/* carrossel infinitamente */
+@keyframes move-carousel {
     0% {
         transform: translateX(0);
     }
-    100% {
-        transform: translateX(-33.33%);
+    15% {
+        transform: translateX(-33.33%); 
     }
+    30% {
+        transform: translateX(-66.66%); 
+    }
+    45% {
+        transform: translateX(-100%); 
+    }
+    60% {
+        transform: translateX(-133.33%); 
+    }
+    75% {
+        transform: translateX(-166.66%); 
+    }
+    90% {
+        transform: translateX(-200%); 
+    }
+    100% {
+        transform: translateX(-233.33%); 
+    }
+}
+
+/* Imagem do carrossel */
+.carrossel-image img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.container__nutricao {  
+    display: flex;
+    margin: 45px 85px 50px;
+}
+
+.titulo__nutricao h5{
+    font-family: "Oswald", sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    min-width: 486px;
+}
+
+.imagem__nutricao img{
+    margin-left: 100px;
+    width: 200px;
+    height: 200px;
+}
+
+.texto__nutricao {
+    margin-left: 80px;
+}
+
+.texto__nutricao h5{
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.texto__nutricao p{
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    max-width: 800px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 2px 10px rgba(201, 192, 192, 0.91);
+    border: none;
+    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-body h5{
+    align-items: center;
+}
+
+.card-title {
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    color: #495057;
+
+    flex-grow: 1;
+}
+
+.btn__card {
+    position: absolute;
+    border-radius: 7px;
+    font-size: 16px;
+    top: 82%;
+    left: 20%;
+    padding: 13px 15px;
+    border: none;
+    margin: 0px;
+}
+
+.container__numeros{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center; 
+    font-family: "Poppins", sans-serif;
+    margin-top: 100px;
+}
+
+.numero {
+    font-weight: 600;
+    font-size: 52px;
+    color: #000;
+}
+
+.titulo__numeros {
+    font-size: 22px;
+    color: #9A9A9A;
+    font-weight: 500;
+}
+
+.imagem__corda {
+    width: 100%;
+    margin-top: 80px;
+    filter: brightness(0.5);
+}
+
+
+
+
+
+
+
+/* Contêiner do vídeo e do botão de play */
+.video-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+/* A imagem de fundo */
+.imagem__corda {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Contêiner do botão de play */
+.play-button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Garante que o botão de play fique acima da imagem */
+}
+
+/* Estilo do botão de play */
+.play-button {
+    background-color: transparent;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    color: white;
+}
+
+.play-icon {
+    width: 70px; 
+    height: 70px;
+    filter: invert(1) grayscale(100%) contrast(100%) brightness(100%);
+}
+
+/* Ícone de Play */
+.bi-play-circle-fill {
+    font-size: 100px;
+}
+
+/* Overlay escuro para o vídeo */
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none; /* Inicialmente invisível */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: pointer; /* Permite que o usuário clique em qualquer lugar para fechar */
+}
+
+/* Pop-up do vídeo */
+.video-popup {
+    position: relative;
+    
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    max-width: 80%;
+    max-height: 80%;
+    overflow: hidden;
+
+    border: none;
+    outline: none;
+}
+
+/* O iframe de vídeo */
+#videoFrame {
+    width: 100%;
+    height: 100%;
+}
+
+.video-text {
+    position: absolute;
+    top: 70%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-size: 80px;
+    color: #FFFFFF;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    max-width: 500px;
 }
