@@ -17,6 +17,20 @@ window.onscroll = function() {
     }
 };
 
+document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll(".image-container img");
+    let currentIndex = 0;
+
+    function changeImage() {
+        images[currentIndex].classList.remove("active"); // Esconde a imagem atual
+        currentIndex = (currentIndex + 1) % images.length; // Passa para a próxima
+        images[currentIndex].classList.add("active"); // Exibe a nova imagem
+    }
+
+    setInterval(changeImage, 3000); // Muda a imagem a cada 4 segundos
+});
+
+
 // Função para animar o contador de todos os números
 function animateNumbers() {
     numeroElementos.forEach((numeroElemento, index) => {

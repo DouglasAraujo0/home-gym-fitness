@@ -1,7 +1,6 @@
 /* 
     Botao learn more e join classes precisando de estilo 
     Carrossel precisando terminar
-    dar zoom nos banners
     
 */
 * {
@@ -459,6 +458,7 @@ div.container-fluid {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     overflow: hidden;
+    position: relative;
 }
 
 .card-body {
@@ -625,3 +625,19 @@ div.container-fluid {
     border: solid 2px #212121;
 }
 
+
+.imagem__puxada__card {
+    overflow: hidden;
+    position: relative;
+    height: 50%;
+}
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s linear;
+    object-fit: cover;
+}
+
+.imagem__puxada__card:hover .card-img-top {
+    transform: scale(1.2);
+}
