@@ -1,4 +1,9 @@
-/* Estilos gerais e reset de margens */
+/* 
+    Botao learn more e join classes precisando de estilo 
+    Carrossel precisando terminar
+    dar zoom nos banners
+    
+*/
 * {
     margin: 0;
     box-sizing: border-box;
@@ -615,3 +620,8 @@ div.container-fluid {
     font-weight: 700;
     max-width: 500px;
 }
+
+.btn__card:hover {
+    border: solid 2px #212121;
+}
+
