@@ -27,7 +27,7 @@
     height: 120vh; /* Aumentei a altura para 120% da altura da tela */
     object-fit: cover; /* Garante que a imagem cubra todo o contêiner sem distorcer */
     opacity: 0; /* Imagens começam invisíveis */
-    transition: opacity 3s ease-in-out, transform 0.4s ease; /* Transição suave para opacidade e zoom */
+    transition: opacity 4s ease-in-out, transform 0.4s ease; /* Transição suave para opacidade e zoom */
     background-position: center;
 }
 
@@ -74,6 +74,7 @@
 .btn:hover {
     background-color: #FFF;
     color: #495057;
+    transition: all 0.5s;
 }
 
 /* Estilo do Navbar */
@@ -180,22 +181,22 @@ div.container-fluid {
 
 .introducao__sobre__nos {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     padding: 8px 48px 0px 0px;
     margin: 0px 0px 0px;
-    max-width: 550px;
+    max-width: 650px;
 }
 
 .lista__sobre__nos {
     font-family: "Poppins", sans-serif;
     padding-left: 16px;
-    max-width: 550px;
+    max-width: 630px;
     margin-top: 15px;
 }
 
 .item__lista {
     padding: 9px 0px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .btn__section__2 {
@@ -208,17 +209,19 @@ div.container-fluid {
     padding: 15px 40px;
     border: none;
     margin-top: 20px;
+    border: 2px solid #495057;
 }
 
 .btn__section__2:hover {
     background-color: #FFF;
     color: #495057;
     border: solid 2px #495057;
+    transition: ease 0.5s;
 }
 
 .imagem__puxada__zoom {
-    height: 465px;
-    width: 365px;
+    height: 500px;
+    width: 400px;
     margin-right: 120px;
     border-radius: 10px;
     overflow: hidden;
@@ -258,32 +261,27 @@ div.container-fluid {
 .container__banner__2 .num__2,
 .container__banner__3 .num__3 {
     font-family: "Oswald", sans-serif;
-    font-weight: 700;
+    font-weight: bold;
     font-size: 26px;
     position: absolute;
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
     padding-right: 6px;
-}
-
-.container__banner__1 .num__1, 
-.container__banner__2 .num__2,
-.container__banner__3 .num__3 {
     border-right: solid 3px #495057;
-    height: 150px;
+    height: 160px;
     display: flex;
     align-items: center;
 
 }
 
-
 .container__banner__1 .banner__1 h4, 
 .container__banner__2 .banner__2 h4,
 .container__banner__3 .banner__3 h4{
     font-family: "Poppins", sans-serif;
-    font-size: 23px;
+    font-size: 24px;
     font-weight: 600;
+    max-width: 300px;
 }
 
 .container__banner__1 .banner__1 h4,
@@ -304,6 +302,7 @@ div.container-fluid {
     color: #495057;
     font-weight: 400;
     margin-left: 50px;
+    max-width: 300px;
 }
 
 .container__banner__1,
@@ -419,13 +418,13 @@ div.container-fluid {
 }
 
 .imagem__nutricao img{
-    margin-left: 100px;
+    margin-left: 90px;
     width: 200px;
     height: 200px;
 }
 
 .texto__nutricao {
-    margin-left: 80px;
+    margin-left: 79px;
 }
 
 .texto__nutricao h5{
@@ -438,6 +437,10 @@ div.container-fluid {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     max-width: 800px;
+}
+
+.texto__classes__2{
+    font-size: calc(1.325rem + .8vw);
 }
 
 .cards {
@@ -482,7 +485,6 @@ div.container-fluid {
     font-size: 16px;
     font-family: "Poppins", sans-serif;
     color: #495057;
-
     flex-grow: 1;
 }
 
@@ -490,11 +492,12 @@ div.container-fluid {
     position: absolute;
     border-radius: 7px;
     font-size: 16px;
-    top: 82%;
+    top: 84%;
     left: 20%;
-    padding: 13px 15px;
+    padding: 11px 13px;
     border: none;
     margin: 0px;
+    border: 2px solid #495057;
 }
 
 .container__numeros{
@@ -502,7 +505,7 @@ div.container-fluid {
     justify-content: space-evenly;
     text-align: center; 
     font-family: "Poppins", sans-serif;
-    margin-top: 100px;
+    margin-top: 90px;
 }
 
 .numero {
@@ -533,11 +536,13 @@ div.container-fluid {
 .video-section {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 120vh;
+    overflow: hidden; 
 }
 
 /* A imagem de fundo */
 .imagem__corda {
+    position: relative;
     width: 100%;
     height: auto;
     display: block;
@@ -640,4 +645,138 @@ div.container-fluid {
 
 .imagem__puxada__card:hover .card-img-top {
     transform: scale(1.2);
+}
+
+.card__7days {
+    width: 170vh;
+    height: 75vh;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    margin-top: -90px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.card__7days .col-md-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+
+.card__7days .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card__7days .col-md-8 {
+    flex: 0 0 50%; 
+
+}
+
+.card__body__7days {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+}
+
+.card__title__7days{
+    max-width: 60vh;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 31px; 
+    text-align: left;
+}
+
+.card__text__7days{
+    max-width: 60vh;
+    margin: 20px 0 30px 0;
+    color: #212121;     
+    text-align: left;
+
+}   
+
+.card__7days .form-control {
+    width: 60vh;
+    height: 7.5vh;
+    border: solid 1px #495057;
+}
+
+.form-floating {
+    font-family: "Poppins",sans-serif;
+}
+
+.btn__card__7days {
+    margin: 16vh 21.5vh; 
+    border: solid 2px #495057;
+    padding: 10px 15px;
+    font-size: 1rem;
+}
+
+.week {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15vh 15vh;
+}
+
+.day {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: none;
+    background: none;
+    transition: all 0.2s;
+}
+
+button.day.selected {
+    background-color: #495057;
+    color: #FFFFFF;
+    border-radius: 7px;
+}
+
+.programacao {
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    width: 87%;
+    margin: 0 auto;
+}
+
+.aula__info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.horario {
+    text-align: left;
+    width: 125px;
+}
+
+.programacao__aula {
+    flex: 1; 
+    text-align: center;
+}
+
+.programacao__professor {
+    text-align: right;
+    width: 150px;
+    font-size: 16px;
+    color: #495057;
+}
+
+.barra {
+    border-bottom: solid 3px #495057;
+    width: 100%;
+    margin-top: 10px; /* Evita que fique colado */
 }

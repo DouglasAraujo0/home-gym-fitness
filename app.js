@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         images[currentIndex].classList.add("active"); // Exibe a nova imagem
     }
 
-    setInterval(changeImage, 3000); // Muda a imagem a cada 4 segundos
+    setInterval(changeImage, 5000); // Muda a imagem a cada 4 segundos
 });
 
 
@@ -146,4 +146,27 @@ videoOverlay.addEventListener('click', () => {
     videoOverlay.style.display = 'none';
     videoFrame.src = '';  // Limpa o vídeo para parar a reprodução
 });
+
+// Selecionando todos os botões com a classe 'day'
+const buttons = document.querySelectorAll('.day');
+const programacao = document.querySelectorAll('.programacao');
+
+buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        // Remover a classe 'selected' de todos os botões
+        buttons.forEach(btn => btn.classList.remove('selected'));
+        
+        // Adicionar a classe 'selected' ao botão clicado
+        this.classList.add('selected');
+        
+        // Ocultar todas as programações
+        programacao.forEach(item => item.style.display = 'none');
+        
+        // Exibir a programação correspondente ao dia selecionado
+        const selectedDay = this.getAttribute('data-day');
+        const selectedProgramacao = document.querySelector(`.programacao[data-day="${selectedDay}"]`);
+        selectedProgramacao.style.display = 'block';
+    });
+});
+
 
