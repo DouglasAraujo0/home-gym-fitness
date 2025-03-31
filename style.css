@@ -907,3 +907,106 @@ button.day.selected {
     transition: ease 0.5s;
 }
 
+.titulo__treinadores, .titulo__blog {
+    margin-top: 6vh;
+}
+
+.cards__treinadores {
+    margin-top: 5vh;
+}
+
+.card__img__treinadores {
+    padding: 0px 1px;
+}
+
+.imagem__treinador__card {
+    width: 101%;
+    height: 68%;
+}
+
+.card__body__treinador {
+    align-items: center;
+}
+
+.title__card__treinador {
+    margin-top: 4vh;
+    font-size: 24px;
+    margin: 0px 0px 8px;
+    padding: 8px 0px 0px;
+    font-weight: 500;
+}
+
+.card__text__treinador {
+    color: #212121;
+}
+
+.redes__sociais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 4vh;
+    font-size: 2.5vh;   
+}
+
+.bi:hover {
+    color: #495057; 
+}
+
+.cards__blog {
+    margin-top: 7vh;
+}
+
+.imagem__blog__card {
+    width: 100%;
+}
+
+.card__body__blog {
+    margin-top: 3vh;
+    display: flex;
+    align-items: center;
+    height: 44vh;
+}
+
+.title__card__blog {
+    font-size: 20px;
+    max-width: 330px;
+}
+
+.text__card__blog {
+    color: #212529;
+    padding: 0;
+    max-width: 320px;
+    
+}
+
+.btn__blog {
+    margin: 1.5vh 0vh 0vh 1.5vh;
+}
+
+.background__footer {
+    margin-top: 13vh;
+    background-color: rgba(242, 242, 242, 0.92);
+}
+
+.info__footer {
+
+}
+
+.titulo__info__footer {
+    text-decoration: none;
+    font-family: "Oswald", sans-serif;
+    color: #495057;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.texto__info__footer {
+    font-family: "Poppins", sans-serif;
+    max-width: 410px;
+}
+
+.bi-footer {
+    background-color: #495057;
+    color: #FFFFFF;
+}
