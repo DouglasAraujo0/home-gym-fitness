@@ -1,16 +1,15 @@
-let currentIndex = 0;
-const carrosselWrapper = document.querySelector('.carrossel-wrapper');
-const images = document.querySelectorAll('.carrossel-image');
-const totalImages = images.length;
-const numeroElementos = document.querySelectorAll('.numero p'); // Seleciona todos os elementos de número
-let targetNumbers = Array.from({ length: numeroElementos.length }, () => Math.floor(Math.random() * 1001)); // Array de números aleatórios de até 1000
-let currentNumbers = Array.from({ length: numeroElementos.length }, () => 0); // Inicializa todos os números como 0
-let isNumbersVisible = true; // Flag para saber se os números estão visíveis
+let indiceAtual = 0;
+const wrapperCarrossel = document.querySelector('.carrossel-wrapper');
+const imagens = document.querySelectorAll('.carrossel-image');
+const totalImagens = imagens.length;
+const elementosNumero = document.querySelectorAll('.numero p'); 
+let numerosAlvo = Array.from({ length: elementosNumero.length }, () => Math.floor(Math.random() * 1001));
+let numerosAtuais = Array.from({ length: elementosNumero.length }, () => 0);
+let saoNumerosVisiveis = true;
 
-// Quando a página for rolada
 window.onscroll = function() {
     var navbar = document.querySelector('.navbar');
-    if (window.scrollY > 10) { // Adiciona a classe quando rolar mais de 10px
+    if (window.scrollY > 10) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
@@ -18,161 +17,132 @@ window.onscroll = function() {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    const images = document.querySelectorAll(".image-container img");
-    let currentIndex = 0;
+    const imagens = document.querySelectorAll(".image-container img");
+    let indiceAtual = 0;
 
-    function changeImage() {
-        images[currentIndex].classList.remove("active"); // Esconde a imagem atual
-        currentIndex = (currentIndex + 1) % images.length; // Passa para a próxima
-        images[currentIndex].classList.add("active"); // Exibe a nova imagem
+    function trocarImagem() {
+        imagens[indiceAtual].classList.remove("active"); 
+        indiceAtual = (indiceAtual + 1) % imagens.length;
+        imagens[indiceAtual].classList.add("active");
     }
 
-    setInterval(changeImage, 5000); // Muda a imagem a cada 4 segundos
+    setInterval(trocarImagem, 5000);
 });
 
+function animarNumeros() {
+    elementosNumero.forEach((elementoNumero, indice) => {
+        const numeroAlvo = numerosAlvo[indice]; 
+        let numeroAtual = 0;
 
-// Função para animar o contador de todos os números
-function animateNumbers() {
-    numeroElementos.forEach((numeroElemento, index) => {
-        const targetNumber = targetNumbers[index]; // Número aleatório para o índice correspondente
-        let currentNumber = 0; // Número inicial
+        const incremento = Math.ceil(numeroAlvo / 100);
 
-        const increment = Math.ceil(targetNumber / 100); // Aumenta o número em pedaços pequenos (dividido em 100 partes)
-
-        const interval = setInterval(() => {
-            if (currentNumber < targetNumber) {
-                currentNumber += increment;
-                if (currentNumber > targetNumber) {
-                    currentNumber = targetNumber; // Garante que o número não ultrapasse o alvo
+        const intervalo = setInterval(() => {
+            if (numeroAtual < numeroAlvo) {
+                numeroAtual += incremento;
+                if (numeroAtual > numeroAlvo) {
+                    numeroAtual = numeroAlvo;
                 }
-                numeroElemento.textContent = currentNumber;
+                elementoNumero.textContent = numeroAtual;
             } else {
-                clearInterval(interval); // Para a animação quando atingir o alvo
+                clearInterval(intervalo)
             }
-        }, 30); // Intervalo de 30ms entre cada incremento
+        }, 30);
     });
 }
 
-// Função para parar a animação de números
-function stopNumbersAnimation() {
-    // Remove todos os intervalos de animação para garantir que os números parem
-    numeroElementos.forEach((numeroElemento) => {
-        numeroElemento.textContent = parseInt(numeroElemento.textContent, 10); // Exibe o número atual (parado)
+function pararAnimacaoNumeros() {
+    elementosNumero.forEach((elementoNumero) => {
+        elementoNumero.textContent = parseInt(elementoNumero.textContent, 10);
     });
 }
 
-// Clonar primeiro e último conjunto de imagens para criar um loop infinito
-const firstClone = images[0].cloneNode(true);
-const lastClone = images[totalImages - 1].cloneNode(true);
-carrosselWrapper.appendChild(firstClone);
-carrosselWrapper.insertBefore(lastClone, images[0]);
+const primeiroClone = imagens[0].cloneNode(true);
+const ultimoClone = imagens[totalImagens - 1].cloneNode(true);
+wrapperCarrossel.appendChild(primeiroClone);
+wrapperCarrossel.insertBefore(ultimoClone, imagens[0]);
 
-// Atualizar a lista de imagens após clonagem
-const updatedImages = document.querySelectorAll('.carrossel-image');
-const updatedTotalImages = updatedImages.length; // Agora conta o total correto de imagens após clonagem
+const imagensAtualizadas = document.querySelectorAll('.carrossel-image');
+const totalImagensAtualizado = imagensAtualizadas.length;
 
-// Configurar posição inicial para evitar um salto visível
-carrosselWrapper.style.transform = `translateX(-${33.33}%)`; // Ajuste para iniciar no lugar correto
+wrapperCarrossel.style.transform = `translateX(-${33.33}%)`;
 
-// Função para mover o carrossel
-function moveCarousel() {
-    currentIndex++;
+function moverCarrossel() {
+    indiceAtual++;
 
-    // Adiciona a transição para um efeito suave
-    carrosselWrapper.style.transition = 'transform 1s ease-in-out';
-    carrosselWrapper.style.transform = `translateX(-${(currentIndex + 1) * 33.33}%)`;
+    wrapperCarrossel.style.transition = 'transform 1s ease-in-out';
+    wrapperCarrossel.style.transform = `translateX(-${(indiceAtual + 1) * 33.33}%)`;
 
-    // Resetar para o início quando chegar no final (loop infinito)
-    if (currentIndex >= updatedTotalImages - 2) { // Considerando o número de clones
+    if (indiceAtual >= totalImagensAtualizado - 2) { 
         setTimeout(() => {
-            carrosselWrapper.style.transition = 'none'; // Remove a transição para evitar efeito brusco
-            carrosselWrapper.style.transform = `translateX(-${33.33}%)`;
-            currentIndex = 0;
-        }, 1000); // Tempo para a transição ocorrer antes do reset
+            wrapperCarrossel.style.transition = 'none';
+            wrapperCarrossel.style.transform = `translateX(-${33.33}%)`;
+            indiceAtual = 0;
+        }, 1000);
     }
 }
 
-// Iniciar carrossel automaticamente
-function startCarousel() {
-    setInterval(moveCarousel, 3000); // Altere o tempo para ajustar a velocidade do carrossel
+function iniciarCarrossel() {
+    setInterval(moverCarrossel, 3000);
 }
 
-// Função para verificar se o container está visível na tela
-function checkIfNumbersVisible() {
-    const container = document.querySelector('.numero'); // O container que contém os números
-    const rect = container.getBoundingClientRect();
+function verificarSeNumerosVisiveis() {
+    const container = document.querySelector('.numero');
+    const retangulo = container.getBoundingClientRect();
 
-    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-        if (!isNumbersVisible) {
-            isNumbersVisible = true;
-            animateNumbers(); // Reiniciar a animação se o container estiver visível
+    if (retangulo.top >= 0 && retangulo.bottom <= window.innerHeight) {
+        if (!saoNumerosVisiveis) {
+            saoNumerosVisiveis = true;
+            animarNumeros();
         }
     } else {
-        if (isNumbersVisible) {
-            isNumbersVisible = false;
-            stopNumbersAnimation(); // Parar a animação se o container estiver fora da tela
+        if (saoNumerosVisiveis) {
+            saoNumerosVisiveis = false;
+            pararAnimacaoNumeros();
         }
     }
 }
 
-// Iniciar quando a página carregar
 document.addEventListener('DOMContentLoaded', () => {
-    startCarousel(); // Inicia o carrossel
-    animateNumbers(); // Inicia a animação de todos os números
+    iniciarCarrossel(); 
+    animarNumeros();
 });
 
-// Adicionar evento de scroll
-window.addEventListener('scroll', checkIfNumbersVisible);
+window.addEventListener('scroll', verificarSeNumerosVisiveis);
 
+const botaoPlay = document.getElementById('playButton');
+const sobreposicaoVideo = document.getElementById('videoOverlay');
+const quadroVideo = document.getElementById('videoFrame');
 
-// Pega os elementos
-const playButton = document.getElementById('playButton');
-const videoOverlay = document.getElementById('videoOverlay');
-const videoFrame = document.getElementById('videoFrame');
+const urlVideo = 'https://www.youtube.com/embed/kmcTEZTrsNg?si=lwzeS1-4UOsGScDK&autoplay=1';
 
-// URL do vídeo do YouTube (usando o iframe que você forneceu)
-const videoUrl = 'https://www.youtube.com/embed/kmcTEZTrsNg?si=lwzeS1-4UOsGScDK&autoplay=1'; // O parâmetro autoplay é adicionado para iniciar a reprodução ao exibir o vídeo.
-
-// Função para abrir o vídeo
-playButton.addEventListener('click', () => {
-    // Exibe o overlay e o vídeo
-    videoOverlay.style.display = 'flex';
-    videoFrame.src = videoUrl;
+botaoPlay.addEventListener('click', () => {
+    sobreposicaoVideo.style.display = 'flex';
+    quadroVideo.src = urlVideo;
 });
 
-// Função para fechar o vídeo ao clicar no overlay
-videoOverlay.addEventListener('click', () => {
-    // Oculta o overlay e limpa a URL do vídeo
-    videoOverlay.style.display = 'none';
-    videoFrame.src = '';  // Limpa o vídeo para parar a reprodução
+sobreposicaoVideo.addEventListener('click', () => {
+    sobreposicaoVideo.style.display = 'none';
+    quadroVideo.src = ''; 
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".day");
+    const botoes = document.querySelectorAll(".day");
     const programacoes = document.querySelectorAll(".programacao");
 
-    function mostrarProgramacao(day) {
-        // Esconde todas as programações
+    function mostrarProgramacao(dia) {
         programacoes.forEach(prog => prog.style.display = "none");
 
-        // Mostra apenas a programação do dia clicado
-        const diaSelecionado = document.querySelector(`.programacao[data-day="${day}"]`);
+        const diaSelecionado = document.querySelector(`.programacao[data-day="${dia}"]`);
         if (diaSelecionado) diaSelecionado.style.display = "block";
     }
-
-    // Mostra o sábado por padrão sem precisar clicar
     mostrarProgramacao("saturday");
 
-    // Adiciona evento de clique aos botões
-    buttons.forEach(button => {
-        button.addEventListener("click", function () {
-            const day = this.getAttribute("data-day");
-            mostrarProgramacao(day);
+    botoes.forEach(botao => {
+        botao.addEventListener("click", function () {
+            const dia = this.getAttribute("data-day");
+            mostrarProgramacao(dia);
 
-            // Remove a classe "selected" de todos os botões
-            buttons.forEach(btn => btn.classList.remove("selected"));
-
-            // Adiciona a classe "selected" ao botão clicado
+            botoes.forEach(btn => btn.classList.remove("selected"));
             this.classList.add("selected");
         });
     });
@@ -180,51 +150,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     const wrapper = document.querySelector(".carrossel-wrapper");
-    const imagesToShow = 3; // Número de imagens visíveis ao mesmo tempo
-    const imageWidth = 100 / imagesToShow; // Cada imagem ocupa 33.33% do contêiner
-    let index = 0;
+    const imagensVisiveis = 3;
+    const larguraImagem = 100 / imagensVisiveis;
+    let indice = 0;
 
-    // Pegamos todas as imagens iniciais
-    let images = Array.from(wrapper.children);
-    const totalImages = images.length;
+    let imagens = Array.from(wrapper.children);
+    const totalImagens = imagens.length;
 
-    // Ajusta a largura do wrapper para caber todas as imagens
     wrapper.style.display = "flex";
-    wrapper.style.width = `${totalImages * imageWidth}%`;
+    wrapper.style.width = `${totalImagens * larguraImagem}%`;
 
-    function moveCarousel() {
+    function moverCarrossel() {
         wrapper.style.transition = "transform 1s ease-in-out";
-        index++;
+        indice++;
 
-        // Move o carrossel para a esquerda
-        wrapper.style.transform = `translateX(-${index * imageWidth}%)`;
+        wrapper.style.transform = `translateX(-${indice * larguraImagem}%)`;
 
         setTimeout(() => {
-            if (index >= totalImages - imagesToShow) {
-                wrapper.style.transition = "none"; // Remove a animação para ajuste instantâneo
-                
-                // 🔹 Remove a primeira imagem e move para o final
-                let firstImage = wrapper.children[0];
-                wrapper.appendChild(firstImage); // Move a imagem para o final
-                wrapper.style.transform = `translateX(-${(index - 1) * imageWidth}%)`; // Ajusta a posição
-                
-                // 🔹 Ajusta o índice para manter o fluxo contínuo SEM REPETIÇÃO
-                index--;
+            if (indice >= totalImagens - imagensVisiveis) {
+                wrapper.style.transition = "none";
+                let primeiraImagem = wrapper.children[0];
+                wrapper.appendChild(primeiraImagem);
+                wrapper.style.transform = `translateX(-${(indice - 1) * larguraImagem}%)`;
+                indice--;
             }
-        }, 1000); // Tempo da transição
+        }, 1000);
     }
-    moveCarousel();
-    // Define o intervalo de movimentação
-    setInterval(moveCarousel, 3000);
+    moverCarrossel();
+    setInterval(moverCarrossel, 3000);
 });
-
-
-
-
-
-
-
-
-
-
-
