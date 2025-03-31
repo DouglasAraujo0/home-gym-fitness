@@ -342,9 +342,8 @@ div.container-fluid {
 .carrossel-wrapper {
     display: flex;
     transition: transform 1s ease-in-out;
-    width: 100%; /* Ajuste para mostrar 3 imagens */
+    width: max-content; /* Ajuste para mostrar 3 imagens */
     gap: 24px; /* Espaçamento entre as imagens */
-    animation: move-carousel 15s infinite;
     
 }
 
@@ -364,35 +363,9 @@ div.container-fluid {
     flex: 0 0 auto; /* Cada imagem ocupa 1/3 da largura do contêiner */
     width: calc(33.33% - 20px); /* A largura das imagens com espaçamento entre elas */
     height: 500px; /* Altura fixa para o carrossel */
+    position: relative;
 }
 
-/* carrossel infinitamente */
-@keyframes move-carousel {
-    0% {
-        transform: translateX(0);
-    }
-    15% {
-        transform: translateX(-33.33%); 
-    }
-    30% {
-        transform: translateX(-66.66%); 
-    }
-    45% {
-        transform: translateX(-100%); 
-    }
-    60% {
-        transform: translateX(-133.33%); 
-    }
-    75% {
-        transform: translateX(-166.66%); 
-    }
-    90% {
-        transform: translateX(-200%); 
-    }
-    100% {
-        transform: translateX(-233.33%); 
-    }
-}
 
 /* Imagem do carrossel */
 .carrossel-image img {
@@ -400,6 +373,40 @@ div.container-fluid {
     height: 100%; 
     object-fit: cover;
     filter: brightness(0.5);
+}
+
+.carrossel-image h4,
+.carrossel-image p {
+ /* Centraliza o conteúdo */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombra no texto */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+.carrossel-image h4 {
+    position: absolute;
+    top: 40%; /* Alinha no meio verticalmente */
+    left: 50%; /* Alinha no meio horizontalmente */
+    transform: translate(-50%, -50%);
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 8px;
+    white-space: nowrap;
+}
+
+.carrossel-image p {
+    position: absolute;
+    top: 60%; /* Alinha no meio verticalmente */
+    left: 50%; /* Alinha no meio horizontalmente */
+    transform: translate(-50%, -50%);
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    margin: 10px 0px 0px;
+    padding: 0
 }
 
 .container__nutricao {  
@@ -708,10 +715,24 @@ div.container-fluid {
 }
 
 .btn__card__7days {
-    margin: 16vh 21.5vh; 
+    background-color: #495057;
     border: solid 2px #495057;
     padding: 10px 15px;
-    font-size: 1rem;
+    border-radius: 7px;
+    color: #fff;
+    transition: all .5s;
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 6.5vh 42vh 0px 0px;
+}
+
+.btn__card__7days:hover {
+    background-color: #FFF;
+    color: #495057;
+    border: solid 2px #495057;
+    transition: ease 0.5s;
 }
 
 .week {
@@ -1103,7 +1124,7 @@ button.day.selected {
 }
 
 .contact__item p {
-    margin: 0; /* Remove margens padrão dos parágrafos */
+    margin: 0;
     max-width: 320px;
     transition: all 0.3s; 
 }

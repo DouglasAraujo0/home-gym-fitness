@@ -178,4 +178,53 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const wrapper = document.querySelector(".carrossel-wrapper");
+    const imagesToShow = 3; // Número de imagens visíveis ao mesmo tempo
+    const imageWidth = 100 / imagesToShow; // Cada imagem ocupa 33.33% do contêiner
+    let index = 0;
+
+    // Pegamos todas as imagens iniciais
+    let images = Array.from(wrapper.children);
+    const totalImages = images.length;
+
+    // Ajusta a largura do wrapper para caber todas as imagens
+    wrapper.style.display = "flex";
+    wrapper.style.width = `${totalImages * imageWidth}%`;
+
+    function moveCarousel() {
+        wrapper.style.transition = "transform 1s ease-in-out";
+        index++;
+
+        // Move o carrossel para a esquerda
+        wrapper.style.transform = `translateX(-${index * imageWidth}%)`;
+
+        setTimeout(() => {
+            if (index >= totalImages - imagesToShow) {
+                wrapper.style.transition = "none"; // Remove a animação para ajuste instantâneo
+                
+                // 🔹 Remove a primeira imagem e move para o final
+                let firstImage = wrapper.children[0];
+                wrapper.appendChild(firstImage); // Move a imagem para o final
+                wrapper.style.transform = `translateX(-${(index - 1) * imageWidth}%)`; // Ajusta a posição
+                
+                // 🔹 Ajusta o índice para manter o fluxo contínuo SEM REPETIÇÃO
+                index--;
+            }
+        }, 1000); // Tempo da transição
+    }
+    moveCarousel();
+    // Define o intervalo de movimentação
+    setInterval(moveCarousel, 3000);
+});
+
+
+
+
+
+
+
+
+
+
 
