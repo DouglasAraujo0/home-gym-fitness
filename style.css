@@ -1134,4 +1134,42 @@ button.day.selected {
 }
 
 
+@media (max-width: 1024px) {
+    /* Escondendo os itens de navegação quando o menu não estiver expandido */
+    .navbar-nav {
+        display: none;
+        flex-direction: column; /* Garante que os itens fiquem empilhados */
+    }
 
+    /* Mostrar os itens de navegação dentro do menu hamburguer quando ele for expandido */
+    .navbar-collapse.show .navbar-nav {
+        display: flex;
+    }
+
+    /* Alinhar o botão hamburguer à direita */
+    .navbar-toggler {
+        display: block !important;
+    }
+
+    /* Aumenta a largura da navbar-collapse para ocupar toda a largura */
+    .navbar-collapse {
+        width: 100%;
+    }
+
+    /* Alinhando os itens no final da navbar */
+    .navbar-collapse {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}
+
+/* Esconde o botão hamburguer e exibe os itens do menu em telas maiores que 1024px */
+@media (min-width: 1025px) {
+
+}
+
+
+@media (max-width: 768px) {
+    /* Ajustes para mobile */
+}
