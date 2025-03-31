@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,46 +15,32 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <!-- Logo -->
-            <a class="navbar-brand" href="#">HOME GYM FITNESS</a>
-            <!-- Container colapsável com o botão hamburguer -->
-            <div class="d-flex ms-auto">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">HOME GYM FITNESS</a>
+                
+                <!-- Botão hamburguer -->
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <!-- Menu colapsável -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Classes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                    </ul>
+                </div>
             </div>
-            <!-- Menu colapsável -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Classes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-
-
-
+        </nav>
+    </header>
 
     <main>
         <div class="image-container">
@@ -148,32 +134,32 @@
                 <div class="carrossel-image">
                     <h4>Strength and Conditioning</h4>
                     <p>Sculpt and tone your body with our results-driven strength training sessions.</p>
-                    <img src="./img/fitness-classes1.jpg" alt="Imagem 1">
+                    <img src="./img/fitness-classes1.jpg" alt="Homem e mulher fazendo aula de condicionamento">
                 </div>
                 <div class="carrossel-image">
                     <h4>Cardio Blast</h4>
                     <p>Get your heart pumping and boost your endurance with our dynamic cardio workouts.</p>
-                    <img src="./img/fitness-class2.jpg" alt="Imagem 2">
+                    <img src="./img/fitness-class2.jpg" alt="Mulher fazendo aeróbico na bicicleta">
                 </div>
                 <div class="carrossel-image">
                     <h4>High-Intensity Interval Training</h4>
                     <p>Ignite your metabolism and torch calories with our heart-pounding HIIT sessions.</p>
-                    <img src="./img/fitness-class3.jpg" alt="Imagem 3">
+                    <img src="./img/fitness-class3.jpg" alt="Mulher fazendo prancha">
                 </div>
                 <div class="carrossel-image">
                     <h4>Pilates for Core Stability</h4>
                     <p>Discover the power of Pilates for core strength and stability. Our certified instructors lead classes .</p>
-                    <img src="./img/fitness-class4.jpg" alt="Imagem 4">
+                    <img src="./img/fitness-class4.jpg" alt="Mulher fazendo barra">
                 </div>
                 <div class="carrossel-image">
                     <h4> Spinning and Cardio Blast</h4>
                     <p>Pedal your way to fitness with our heart-pumping spinning classes. This exhilarating workout combines high-intensity.</p>
-                    <img src="./img/fitness-class5.jpg" alt="Imagem 5">
+                    <img src="./img/fitness-class5.jpg" alt="Homem e mulher treinando na academia">
                 </div>
                 <div class="carrossel-image">
                     <h4>Yoga and Mindfulness</h4>
                     <p> Find your center and improve flexibility with our rejuvenating yoga classes. Led by experienced instructors.</p>
-                    <img src="./img/fitness-class6.jpg" alt="Imagem 6">
+                    <img src="./img/fitness-class6.jpg" alt="professor dando aula de yoga para uma mulher">
                 </div>
             </div>
         </div>
@@ -721,10 +707,8 @@
             </div>
         </div>
     </footer>
-    
 
     <script src="/app.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 </body>
 </html>
