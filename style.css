@@ -1,7 +1,7 @@
 /* 
-    Botao learn more e join classes precisando de estilo 
     Carrossel precisando terminar
-    
+    btn get start now no section 7days
+    section price plans
 */
 * {
     margin: 0;
@@ -317,9 +317,6 @@ div.container-fluid {
 .titulo__classes {
     padding: 0px 0px 48px 0px;
 }
-
-
-
 
 /* Garantir que o carrossel ocupe 100% da largura da tela */
 .carousel-inner {
@@ -721,7 +718,7 @@ div.container-fluid {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 15vh 15vh;
+    margin: 15vh 0vh 10vh 0vh ;
 }
 
 .day {
@@ -748,14 +745,15 @@ button.day.selected {
     font-weight: 500;
     width: 87%;
     margin: 0 auto;
+    display: none;
 }
 
 .aula__info{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .horario {
@@ -778,5 +776,134 @@ button.day.selected {
 .barra {
     border-bottom: solid 3px #495057;
     width: 100%;
-    margin-top: 10px; /* Evita que fique colado */
+    margin-top: 10px; 
 }
+
+.planos {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-family: "Poppins", sans-serif;
+    margin: 20vh 0vh 0vh 12.5vh;
+}
+
+.descricao__planos {
+    max-width: 55vh;
+    justify-content: flex-start;
+}
+
+.paragrafo__preco__planos{
+    color: #495057;
+    font-weight: 600;
+    margin: 0px 0px 0px;
+    padding: 0px 0px 16px;
+}
+
+.titulo__planos {
+    font-family: "Oswald", sans-serif;
+    font-size: 38px;
+    margin: 0px 0px 8px;
+    font-weight: 700;
+}
+
+.texto__planos {
+    margin: 0px 0px 16px;
+    padding:16px 0px;
+}
+/* Estilo do botão PRICING PLAN */
+.btn__planos {
+    background-color: #495057;
+    border: solid 2px #495057;
+    padding: 10px 15px;
+    border-radius: 7px;
+    color: #fff;
+    transition: all .5s;
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.btn__planos:hover {
+    background-color: #FFF;
+    color: #495057;
+    border: solid 2px #495057;
+    transition: ease 0.5s;
+}
+
+.plano__anual__mensal {
+    display: flex;
+    margin-left: 10vh;
+    gap: 4vh;
+    margin-top: -25px;
+}
+
+
+.yearly__plan, .monthly__plan {
+    width: 22.5rem;
+    height: auto;  
+}
+
+.card-header.yearly {
+    background-color: #495057;
+    color: #FFFFFF;
+}
+
+.card-header {
+    font-family: 'Oswald', sans-serif;
+    font-size: 27px;
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    border: none;
+    padding-bottom: 15px;
+}
+
+.list-group {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-group-item {  
+    text-align: center;
+}
+
+.list-group-item.item-ano {
+    padding: 20px 114.1px;
+}
+
+.list-group-item.item-mes {
+    padding: 20px 104.4px;
+}
+
+.list-group-item:last-of-type {
+    border: none;
+}
+
+.valor__planos {
+    font-size: 24px;
+    font-weight: 600;
+}
+.btn__mensal__anual {
+    background-color: #495057;
+    border: solid 2px #495057;
+    padding: 10px 10px;
+    width: 15vh;
+    text-align: center;
+    border-radius: 7px;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+}
+
+.btn__mensal__anual:hover {
+    background-color: #FFF;
+    color: #495057;
+    border: solid 2px #495057;
+    transition: ease 0.5s;
+}
+

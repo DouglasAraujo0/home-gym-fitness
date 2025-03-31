@@ -147,25 +147,34 @@ videoOverlay.addEventListener('click', () => {
     videoFrame.src = '';  // Limpa o vídeo para parar a reprodução
 });
 
-// Selecionando todos os botões com a classe 'day'
-const buttons = document.querySelectorAll('.day');
-const programacao = document.querySelectorAll('.programacao');
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".day");
+    const programacoes = document.querySelectorAll(".programacao");
 
-buttons.forEach(button => {
-    button.addEventListener('click', function() {
-        // Remover a classe 'selected' de todos os botões
-        buttons.forEach(btn => btn.classList.remove('selected'));
-        
-        // Adicionar a classe 'selected' ao botão clicado
-        this.classList.add('selected');
-        
-        // Ocultar todas as programações
-        programacao.forEach(item => item.style.display = 'none');
-        
-        // Exibir a programação correspondente ao dia selecionado
-        const selectedDay = this.getAttribute('data-day');
-        const selectedProgramacao = document.querySelector(`.programacao[data-day="${selectedDay}"]`);
-        selectedProgramacao.style.display = 'block';
+    function mostrarProgramacao(day) {
+        // Esconde todas as programações
+        programacoes.forEach(prog => prog.style.display = "none");
+
+        // Mostra apenas a programação do dia clicado
+        const diaSelecionado = document.querySelector(`.programacao[data-day="${day}"]`);
+        if (diaSelecionado) diaSelecionado.style.display = "block";
+    }
+
+    // Mostra o sábado por padrão sem precisar clicar
+    mostrarProgramacao("saturday");
+
+    // Adiciona evento de clique aos botões
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            const day = this.getAttribute("data-day");
+            mostrarProgramacao(day);
+
+            // Remove a classe "selected" de todos os botões
+            buttons.forEach(btn => btn.classList.remove("selected"));
+
+            // Adiciona a classe "selected" ao botão clicado
+            this.classList.add("selected");
+        });
     });
 });
 
