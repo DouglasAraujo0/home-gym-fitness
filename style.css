@@ -1,85 +1,86 @@
-/* 
-    Carrossel precisando terminar
-    btn get start now no section 7days
-    section price plans
-*/
 * {
     margin: 0;
     box-sizing: border-box;
 }
 
-
-
-/* Contêiner principal para as imagens */
-.image-container {
-    width: 100%;
-    height: 100vh; /* A altura é agora 100% da altura da tela */
-    position: relative;
-    overflow: hidden; /* Impede que a imagem ultrapasse as bordas da div */
+:root {
+    --color-primary: #212121;
+    --color-secondary: #495057;
+    --font-family-oswald: "Oswald", sans-serif;
+    --font-family-poppins: "Poppins", sans-serif;
+    --btn-padding: 15px 40px;
+    --btn-border-radius: 7px;
+    --transition-duration: 0.5s;
+    --transition-timing: ease;
+    --max-width: 90%;
+    --banner-max-width: 500px;
+    --banner-padding: 20px;
 }
 
-/* Estilo para cada imagem */
+.image-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
 .image-container img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 120vh; /* Aumentei a altura para 120% da altura da tela */
-    object-fit: cover; /* Garante que a imagem cubra todo o contêiner sem distorcer */
-    opacity: 0; /* Imagens começam invisíveis */
-    transition: opacity 4s ease-in-out, transform 0.4s ease; /* Transição suave para opacidade e zoom */
+    height: 120vh;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 4s ease-in-out, transform 0.4s ease;
     background-position: center;
 }
 
-/* A classe 'active' faz com que a imagem se torne visível */
 .image-container img.active {
-    opacity: 1; /* Quando 'active', a imagem fica visível */
+    opacity: 1;
 }
 
-/* Ajuste de sobreposição do texto */
 .text-overlay {
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Ajusta para o centro exato */
+    transform: translate(-50%, -50%);
     color: white;
     font-size: calc(1.575rem + 3.9vw);
     font-weight: bold;
-    font-family: "Oswald", sans-serif;
+    font-family: var(--font-family-oswald);
     z-index: 10;
     text-align: center;
-    max-width: 90%; /* Limita a largura do texto */
+    max-width: var(--max-width);
     line-height: 1.2;
-    white-space: nowrap; /* Impede que o texto quebre em múltiplas linhas */
+    white-space: nowrap;
 }
 
-/* Ajuste do botão "JOIN NOW" */
 .btn {
     position: absolute;
-    background-color: #495057;
+    background-color: var(--color-secondary);
     color: white;
-    border-radius: 7px;
-    font-family: "Oswald", sans-serif;
+    border-radius: var(--btn-border-radius);
+    font-family: var(--font-family-oswald);
     font-weight: 500;
     z-index: 10;
     top: 52%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 1.25rem;
-    padding: 15px 40px;
+    padding: var(--btn-padding);
     border: none;
     margin: 0 0 8px;
 }
 
 .btn:hover {
     background-color: #FFF;
-    color: #495057;
-    transition: all 0.5s;
+    color: var(--color-secondary);
+    transition: all var(--transition-duration) var(--transition-timing);
 }
 
-/* Estilo do Navbar */
 nav, .nav, .navbar-brand, .nav-link, .nav-item, #navbarNav {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-family-poppins);
 }
 
 .navbar {
@@ -87,16 +88,14 @@ nav, .nav, .navbar-brand, .nav-link, .nav-item, #navbarNav {
     top: 0;
     width: 100%;
     z-index: 9999;
-    padding: 16px 0; /* Padding inicial */
-    background-color: white; /* Mantém o fundo branco */
-    transition: padding 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+    padding: 16px 0;
+    background-color: white;
+    transition: padding 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Quando rola a página para baixo */
 .navbar.scrolled {
-    padding: 10px 0; /* Reduz o padding quando rolar */
-    background-color: white; /* Fundo branco permanece */
-    box-shadow: 0 10px 30px -10px rgb(0 64 128 / 20%); /* Adiciona a sombra */
+    padding: 10px 0;
+    box-shadow: 0 10px 30px -10px rgb(0 64 128 / 20%);
 }
 
 .navbar-brand {
@@ -114,13 +113,13 @@ nav, .nav, .navbar-brand, .nav-link, .nav-item, #navbarNav {
 }
 
 .nav-link {
-    color: #212121;
+    color: var(--color-primary);
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #495057;
+    color: var(--color-secondary);
 }
 
 #navbarNav {
@@ -144,15 +143,15 @@ div.container-fluid {
 }
 
 .paragrafo {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-family-poppins);
     font-size: 16px;
-    color: #495057;
+    color: var(--color-secondary);
     font-weight: 600;
     margin: 0 0 5px;
 }
 
 .texto {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--font-family-oswald);
     font-size: calc(1.325rem + .9vw);
     font-weight: 700;
 }
@@ -180,43 +179,42 @@ div.container-fluid {
 }
 
 .introducao__sobre__nos {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-family-poppins);
     font-size: 16px;
-    padding: 8px 48px 0px 0px;
-    margin: 0px 0px 0px;
+    padding: 8px 48px 0 0;
     max-width: 650px;
 }
 
 .lista__sobre__nos {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-family-poppins);
     padding-left: 16px;
     max-width: 630px;
     margin-top: 15px;
 }
 
 .item__lista {
-    padding: 9px 0px;
+    padding: 9px 0;
     font-size: 16px;
 }
 
 .btn__section__2 {
-    background-color: #495057;
+    background-color: var(--color-secondary);
     color: white;
-    border-radius: 7px;
-    font-family: "Oswald", sans-serif;
+    border-radius: var(--btn-border-radius);
+    font-family: var(--font-family-oswald);
     font-weight: 500;
     font-size: 1rem;
-    padding: 15px 40px;
+    padding: var(--btn-padding);
     border: none;
     margin-top: 20px;
-    border: 2px solid #495057;
+    border: 2px solid var(--color-secondary);
 }
 
 .btn__section__2:hover {
     background-color: #FFF;
-    color: #495057;
-    border: solid 2px #495057;
-    transition: ease 0.5s;
+    color: var(--color-secondary);
+    border: solid 2px var(--color-secondary);
+    transition: ease var(--transition-duration);
 }
 
 .imagem__puxada__zoom {
@@ -227,6 +225,7 @@ div.container-fluid {
     overflow: hidden;
     position: relative;
 }
+
 .img__puxada {
     width: 100%;
     height: 100%;
@@ -247,20 +246,19 @@ div.container-fluid {
 }
 
 .container__banner__1,
-.container__banner__2, 
+.container__banner__2,
 .container__banner__3 {
-    max-width: 500px;
-    padding: 20px;
+    max-width: var(--banner-max-width);
+    padding: var(--banner-padding);
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(201, 192, 192, 0.91);
     position: relative;
-
 }
 
-.container__banner__1 .num__1, 
+.container__banner__1 .num__1,
 .container__banner__2 .num__2,
 .container__banner__3 .num__3 {
-    font-family: "Oswald", sans-serif;
+    font-family: var(--font-family-oswald);
     font-weight: bold;
     font-size: 26px;
     position: absolute;
@@ -268,17 +266,16 @@ div.container-fluid {
     top: 50%;
     transform: translateY(-50%);
     padding-right: 6px;
-    border-right: solid 3px #495057;
+    border-right: solid 3px var(--color-secondary);
     height: 160px;
     display: flex;
     align-items: center;
-
 }
 
-.container__banner__1 .banner__1 h4, 
+.container__banner__1 .banner__1 h4,
 .container__banner__2 .banner__2 h4,
-.container__banner__3 .banner__3 h4{
-    font-family: "Poppins", sans-serif;
+.container__banner__3 .banner__3 h4 {
+    font-family: var(--font-family-poppins);
     font-size: 24px;
     font-weight: 600;
     max-width: 300px;
@@ -289,97 +286,85 @@ div.container-fluid {
     margin-left: 50px;
     margin-bottom: 15px;
 }
+
 .container__banner__2 .banner__2 h4 {
     margin-left: 50px;
     margin-top: 1px;
 }
 
-.container__banner__1 .banner__1 p, 
+.container__banner__1 .banner__1 p,
 .container__banner__2 .banner__2 p,
-.container__banner__3 .banner__3 p{
-    font-family: "Poppins", sans-serif;
+.container__banner__3 .banner__3 p {
+    font-family: var(--font-family-poppins);
     font-size: 16px;
-    color: #495057;
+    color: var(--color-secondary);
     font-weight: 400;
     margin-left: 50px;
     max-width: 300px;
 }
-
 .container__banner__1,
 .container__banner__2,
 .container__banner__3 {
-    display: flex; /* Faz os elementos ficarem lado a lado */
-    align-items: center; /* Alinha os itens verticalmente */
-    gap: 20px; /* Dá um espaço entre o número e o título */
+    display: flex;
+    align-items: center;
+    gap: 20px;
     width: 100%;
 }
 
 .titulo__classes {
-    padding: 0px 0px 48px 0px;
+    padding: 0 0 48px 0;
 }
 
-/* Garantir que o carrossel ocupe 100% da largura da tela */
 .carousel-inner {
     width: 100%;
     overflow: hidden;
 }
 
-/* Imagens do carrossel devem preencher completamente o contêiner */
 .carousel-item img {
     object-fit: cover;
     width: 100%;
     height: 100vh;
 }
 
-/* Caso queira fazer o carrossel se mover mais suavemente, pode adicionar uma transição */
 .carousel-item {
-    transition: transform 0.5s ease-in-out;
+    transition: transform var(--transition-duration) var(--transition-timing);
 }
 
-
-
-/* Wrapper para as imagens */
 .carrossel-wrapper {
     display: flex;
     transition: transform 1s ease-in-out;
-    width: max-content; /* Ajuste para mostrar 3 imagens */
-    gap: 24px; /* Espaçamento entre as imagens */
-    
+    width: max-content;
+    gap: 24px;
 }
 
-/* Contêiner do carrossel */
 .carrossel-container {
-    width: 88%; /* Largura total do carrossel */
-    overflow: hidden; /* Esconde as imagens fora da área visível */
+    width: 88%;
+    overflow: hidden;
     margin: 0 auto;
     position: relative;
-    padding-bottom: 100px; /* Ajuste conforme necessário */
+    padding-bottom: 100px;
     display: flex;
-    justify-content: center; /* Garante que o carrossel esteja centralizado */
+    justify-content: center;
 }
 
-/* Imagem do carrossel */
 .carrossel-image {
-    flex: 0 0 auto; /* Cada imagem ocupa 1/3 da largura do contêiner */
-    width: calc(33.33% - 20px); /* A largura das imagens com espaçamento entre elas */
-    height: 500px; /* Altura fixa para o carrossel */
+    flex: 0 0 auto;
+    width: calc(33.33% - 20px);
+    height: 500px;
     position: relative;
 }
 
-
-/* Imagem do carrossel */
 .carrossel-image img {
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     filter: brightness(0.5);
 }
 
 .carrossel-image h4,
 .carrossel-image p {
- /* Centraliza o conteúdo */
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombra no texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
     margin: 0;
     padding: 0;
@@ -388,10 +373,10 @@ div.container-fluid {
 
 .carrossel-image h4 {
     position: absolute;
-    top: 40%; /* Alinha no meio verticalmente */
-    left: 50%; /* Alinha no meio horizontalmente */
+    top: 40%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    font-family: "Oswald", sans-serif;
+    font-family: var(--font-family-oswald);
     font-weight: 600;
     font-size: 24px;
     margin: 8px;
@@ -400,28 +385,27 @@ div.container-fluid {
 
 .carrossel-image p {
     position: absolute;
-    top: 60%; /* Alinha no meio verticalmente */
-    left: 50%; /* Alinha no meio horizontalmente */
+    top: 60%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-family-poppins);
     font-size: 16px;
-    margin: 10px 0px 0px;
-    padding: 0
+    margin: 10px 0 0;
 }
 
-.container__nutricao {  
+.container__nutricao {
     display: flex;
     margin: 45px 85px 50px;
 }
 
-.titulo__nutricao h5{
-    font-family: "Oswald", sans-serif;
+.titulo__nutricao h5 {
+    font-family: var(--font-family-oswald);
     font-size: 40px;
     font-weight: 600;
     min-width: 486px;
 }
 
-.imagem__nutricao img{
+.imagem__nutricao img {
     margin-left: 90px;
     width: 200px;
     height: 200px;
@@ -431,20 +415,20 @@ div.container-fluid {
     margin-left: 79px;
 }
 
-.texto__nutricao h5{
-    font-family: "Poppins", sans-serif;
+.texto__nutricao h5 {
+    font-family: var(--font-family-poppins);
     font-size: 24px;
     font-weight: 600;
 }
 
-.texto__nutricao p{
-    font-family: "Poppins", sans-serif;
+.texto__nutricao p {
+    font-family: var(--font-family-poppins);
     font-size: 16px;
     max-width: 800px;
 }
 
-.texto__classes__2{
-    font-size: calc(1.325rem + .8vw);
+.texto__classes__2 {
+    font-size: calc(1.325rem + 0.8vw);
 }
 
 .cards {
@@ -474,41 +458,41 @@ div.container-fluid {
     justify-content: space-between;
 }
 
-.card-body h5{
+.card-body h5 {
     align-items: center;
 }
 
 .card-title {
     font-size: 22px;
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-family-poppins);
     text-align: center;
     font-weight: 600;
 }
 
 .card-text {
     font-size: 16px;
-    font-family: "Poppins", sans-serif;
-    color: #495057;
+    font-family: var(--font-family-poppins);
+    color: var(--color-secondary);
     flex-grow: 1;
 }
 
 .btn__card {
     position: absolute;
-    border-radius: 7px;
+    border-radius: var(--btn-border-radius);
     font-size: 16px;
     top: 84%;
     left: 20%;
     padding: 11px 13px;
     border: none;
-    margin: 0px;
-    border: 2px solid #495057;
+    margin: 0;
+    border: 2px solid var(--color-secondary);
 }
 
-.container__numeros{
+.container__numeros {
     display: flex;
     justify-content: space-evenly;
-    text-align: center; 
-    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-family: var(--font-family-poppins);
     margin-top: 90px;
 }
 
@@ -530,21 +514,13 @@ div.container-fluid {
     filter: brightness(0.5);
 }
 
-
-
-
-
-
-
-/* Contêiner do vídeo e do botão de play */
 .video-section {
     position: relative;
     width: 100%;
     height: 120vh;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
-/* A imagem de fundo */
 .imagem__corda {
     position: relative;
     width: 100%;
@@ -552,16 +528,14 @@ div.container-fluid {
     display: block;
 }
 
-/* Contêiner do botão de play */
 .play-button-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10; /* Garante que o botão de play fique acima da imagem */
+    z-index: 10;
 }
 
-/* Estilo do botão de play */
 .play-button {
     background-color: transparent;
     border: none;
@@ -571,17 +545,15 @@ div.container-fluid {
 }
 
 .play-icon {
-    width: 70px; 
+    width: 70px;
     height: 70px;
     filter: invert(1) grayscale(100%) contrast(100%) brightness(100%);
 }
 
-/* Ícone de Play */
 .bi-play-circle-fill {
     font-size: 100px;
 }
 
-/* Overlay escuro para o vídeo */
 .video-overlay {
     position: fixed;
     top: 0;
@@ -589,29 +561,25 @@ div.container-fluid {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.8);
-    display: none; /* Inicialmente invisível */
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    cursor: pointer; /* Permite que o usuário clique em qualquer lugar para fechar */
+    cursor: pointer;
 }
 
-/* Pop-up do vídeo */
 .video-popup {
     position: relative;
-    
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     max-width: 80%;
     max-height: 80%;
     overflow: hidden;
-
     border: none;
     outline: none;
 }
 
-/* O iframe de vídeo */
 #videoFrame {
     width: 100%;
     height: 100%;
@@ -625,21 +593,21 @@ div.container-fluid {
     z-index: 10;
     font-size: 80px;
     color: #FFFFFF;
-    font-family: "Oswald", sans-serif;
+    font-family: var(--font-family-oswald);
     font-weight: 700;
     max-width: 500px;
 }
 
 .btn__card:hover {
-    border: solid 2px #212121;
+    border: solid 2px var(--color-primary);
 }
-
 
 .imagem__puxada__card {
     overflow: hidden;
     position: relative;
     height: 50%;
 }
+
 .card-img-top {
     width: 100%;
     height: 100%;
@@ -667,8 +635,6 @@ div.container-fluid {
     flex: 0 0 50%;
     max-width: 50%;
 }
-
-
 .card__7days .card-img-top {
     width: 100%;
     height: 100%;
@@ -676,74 +642,72 @@ div.container-fluid {
 }
 
 .card__7days .col-md-8 {
-    flex: 0 0 50%; 
-
+    flex: 0 0 50%;
 }
 
 .card__body__7days {
     margin-top: 5vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; 
+    justify-content: flex-start;
     align-items: center;
 }
 
-.card__title__7days{
+.card__title__7days {
     max-width: 60vh;
-    font-family: "Oswald", sans-serif;
+    font-family: var(--font-family-oswald);
     font-weight: 700;
-    font-size: 31px; 
+    font-size: 31px;
     text-align: left;
 }
 
-.card__text__7days{
+.card__text__7days {
     max-width: 60vh;
-    margin: 20px 0 30px 0;
-    color: #212121;     
+    margin: 20px 0 30px;
+    color: var(--color-primary);
     text-align: left;
-
-}   
+}
 
 .card__7days .form-control {
     width: 60vh;
     height: 7.5vh;
-    border: solid 1px #495057;
+    border: solid 1px var(--color-secondary);
 }
 
 .form-floating {
-    font-family: "Poppins",sans-serif;
+    font-family: var(--font-family-poppins);
 }
 
 .btn__card__7days {
-    background-color: #495057;
-    border: solid 2px #495057;
+    background-color: var(--color-secondary);
+    border: solid 2px var(--color-secondary);
     padding: 10px 15px;
-    border-radius: 7px;
+    border-radius: var(--btn-border-radius);
     color: #fff;
-    transition: all .5s;
+    transition: all var(--transition-duration);
     display: inline-block;
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--font-family-oswald);
     font-weight: 500;
     text-decoration: none;
-    margin: 6.5vh 42vh 0px 0px;
+    margin: 6.5vh 42vh 0 0;
 }
 
 .btn__card__7days:hover {
     background-color: #FFF;
-    color: #495057;
-    border: solid 2px #495057;
-    transition: ease 0.5s;
+    color: var(--color-secondary);
+    border: solid 2px var(--color-secondary);
+    transition: var(--transition-timing) var(--transition-duration);
 }
 
 .week {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 15vh 0vh 10vh 0vh ;
+    margin: 15vh 0 10vh;
 }
 
 .day {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-family-poppins);
     font-size: 16px;
     font-weight: 600;
     padding: 8px 16px;
@@ -753,15 +717,15 @@ div.container-fluid {
 }
 
 button.day.selected {
-    background-color: #495057;
+    background-color: var(--color-secondary);
     color: #FFFFFF;
-    border-radius: 7px;
+    border-radius: var(--btn-border-radius);
 }
 
 .programacao {
     display: flex;
     flex-direction: column;
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-family-poppins);
     font-size: 20px;
     font-weight: 500;
     width: 87%;
@@ -769,12 +733,11 @@ button.day.selected {
     display: none;
 }
 
-.aula__info{
+.aula__info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin: 40px 0;
 }
 
 .horario {
@@ -783,7 +746,7 @@ button.day.selected {
 }
 
 .programacao__aula {
-    flex: 1; 
+    flex: 1;
     text-align: center;
 }
 
@@ -791,21 +754,21 @@ button.day.selected {
     text-align: right;
     width: 150px;
     font-size: 16px;
-    color: #495057;
+    color: var(--color-secondary);
 }
 
 .barra {
-    border-bottom: solid 3px #495057;
+    border-bottom: solid 3px var(--color-secondary);
     width: 100%;
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
 .planos {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    font-family: "Poppins", sans-serif;
-    margin: 20vh 0vh 0vh 12.5vh;
+    font-family: var(--font-family-poppins);
+    margin: 20vh 0 0 12.5vh;
 }
 
 .descricao__planos {
@@ -813,43 +776,43 @@ button.day.selected {
     justify-content: flex-start;
 }
 
-.paragrafo__preco__planos{
-    color: #495057;
+.paragrafo__preco__planos {
+    color: var(--color-secondary);
     font-weight: 600;
-    margin: 0px 0px 0px;
-    padding: 0px 0px 16px;
+    margin: 0 0 0;
+    padding: 0 0 16px;
 }
 
 .titulo__planos {
-    font-family: "Oswald", sans-serif;
+    font-family: var(--font-family-oswald);
     font-size: 38px;
-    margin: 0px 0px 8px;
+    margin: 0 0 8px;
     font-weight: 700;
 }
 
 .texto__planos {
-    margin: 0px 0px 16px;
-    padding:16px 0px;
+    margin: 0 0 16px;
+    padding: 16px 0;
 }
-/* Estilo do botão PRICING PLAN */
+
 .btn__planos {
-    background-color: #495057;
-    border: solid 2px #495057;
+    background-color: var(--color-secondary);
+    border: solid 2px var(--color-secondary);
     padding: 10px 15px;
-    border-radius: 7px;
+    border-radius: var(--btn-border-radius);
     color: #fff;
-    transition: all .5s;
+    transition: all var(--transition-duration);
     display: inline-block;
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--font-family-oswald);
     font-weight: 500;
     text-decoration: none;
 }
 
 .btn__planos:hover {
     background-color: #FFF;
-    color: #495057;
-    border: solid 2px #495057;
-    transition: ease 0.5s;
+    color: var(--color-secondary);
+    border: solid 2px var(--color-secondary);
+    transition: var(--transition-timing) var(--transition-duration);
 }
 
 .plano__anual__mensal {
@@ -859,19 +822,18 @@ button.day.selected {
     margin-top: -25px;
 }
 
-
 .yearly__plan, .monthly__plan {
     width: 22.5rem;
-    height: auto;  
+    height: auto;
 }
 
 .card-header.yearly {
-    background-color: #495057;
+    background-color: var(--color-secondary);
     color: #FFFFFF;
 }
 
 .card-header {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--font-family-oswald);
     font-size: 27px;
     width: 100%;
     text-align: center;
@@ -886,7 +848,7 @@ button.day.selected {
     flex-direction: column;
 }
 
-.list-group-item {  
+.list-group-item {
     text-align: center;
 }
 
@@ -906,15 +868,16 @@ button.day.selected {
     font-size: 24px;
     font-weight: 600;
 }
+
 .btn__mensal__anual {
-    background-color: #495057;
-    border: solid 2px #495057;
+    background-color: var(--color-secondary);
+    border: solid 2px var(--color-secondary);
     padding: 10px 10px;
     width: 15vh;
     text-align: center;
-    border-radius: 7px;
+    border-radius: var(--btn-border-radius);
     color: #fff;
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--font-family-oswald);
     font-weight: 600;
     text-decoration: none;
     display: block;
@@ -923,9 +886,9 @@ button.day.selected {
 
 .btn__mensal__anual:hover {
     background-color: #FFF;
-    color: #495057;
-    border: solid 2px #495057;
-    transition: ease 0.5s;
+    color: var(--color-secondary);
+    border: solid 2px var(--color-secondary);
+    transition: var(--transition-timing) var(--transition-duration);
 }
 
 .titulo__treinadores, .titulo__blog {
@@ -937,7 +900,7 @@ button.day.selected {
 }
 
 .card__img__treinadores {
-    padding: 0px 1px;
+    padding: 0 1px;
 }
 
 .imagem__treinador__card {
@@ -952,13 +915,13 @@ button.day.selected {
 .title__card__treinador {
     margin-top: 4vh;
     font-size: 24px;
-    margin: 0px 0px 8px;
-    padding: 8px 0px 0px;
+    margin: 0 0 8px;
+    padding: 8px 0 0;
     font-weight: 500;
 }
 
 .card__text__treinador {
-    color: #212121;
+    color: var(--color-primary);
 }
 
 .redes__sociais {
@@ -967,17 +930,16 @@ button.day.selected {
     align-items: center;
     gap: 20px;
     margin-bottom: 4vh;
-    font-size: 2.5vh;   
+    font-size: 2.5vh;
 }
 
 .bi:hover {
-    color: #495057; 
+    color: var(--color-secondary);
 }
 
 .cards__blog {
     margin-top: 7vh;
 }
-
 .imagem__blog__card {
     width: 100%;
 }
@@ -995,25 +957,22 @@ button.day.selected {
 }
 
 .text__card__blog {
-    color: #212529;
+    color: var(--color-primary);
     padding: 0;
     max-width: 320px;
-    
 }
 
 .btn__blog {
-    margin: 1.5vh 0vh 0vh 1.5vh;
+    margin: 1.5vh 0 0 1.5vh;
 }
-
-
 
 .background__footer {
     margin-top: 13vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0vh 11vh 6vh 11vh;
-    background-color: rgba(242, 242, 242, 0.92);   
+    padding: 0 11vh 6vh 11vh;
+    background-color: rgba(242, 242, 242, 0.92);
 }
 
 .info__footer {
@@ -1022,14 +981,14 @@ button.day.selected {
 
 .titulo__info__footer {
     text-decoration: none;
-    font-family: "Oswald", sans-serif;
-    color: #495057;
+    font-family: var(--font-family-oswald);
+    color: var(--color-secondary);
     font-size: 38px;
     font-weight: 500;
 }
 
 .texto__info__footer {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-family-poppins);
     max-width: 410px;
     margin-top: 2.5vh;
 }
@@ -1038,11 +997,10 @@ button.day.selected {
     display: flex;
     gap: 20px;
     margin-top: 4vh;
-    
 }
 
 .bi-footer {
-    background-color: #495057;
+    background-color: var(--color-secondary);
     color: #FFFFFF;
     font-size: 20px;
     width: 50px;
@@ -1051,13 +1009,13 @@ button.day.selected {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: 2px solid #495057;
+    border: 2px solid var(--color-secondary);
     transition: all 0.2s ease-in-out;
 }
 
 .bi-footer:hover {
     background-color: #FFFFFF;
-    color: #495057;
+    color: var(--color-secondary);
 }
 
 .our__service, .contact__us {
@@ -1065,8 +1023,8 @@ button.day.selected {
 }
 
 .titulo__our__service {
-    padding: 0px 0px 24px;
-    font-family: "Poppins", sans-serif;
+    padding: 0 0 24px;
+    font-family: var(--font-family-poppins);
     font-weight: 600;
     margin-bottom: 0;
 }
@@ -1076,20 +1034,21 @@ button.day.selected {
     padding-left: 0;
     margin-top: 0;
 }
-.lista__our__service li{ 
+
+.lista__our__service li {
     margin-top: 10px;
-    transition: transform 0.4s ease-in-out; 
+    transition: transform 0.4s ease-in-out;
 }
 
 .item__lista__our__service {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-family-poppins);
     color: #000;
     text-decoration: none;
 }
 
 .item__lista__our__service:hover {
     text-decoration: underline;
-    color: #495057;
+    color: var(--color-secondary);
 }
 
 .lista__our__service li:hover {
@@ -1097,8 +1056,8 @@ button.day.selected {
 }
 
 .titulo__contact__us {
-    padding: 0px 0px 48px;
-    font-family: "Poppins", sans-serif;
+    padding: 0 0 48px;
+    font-family: var(--font-family-poppins);
     font-weight: 600;
 }
 
@@ -1106,7 +1065,7 @@ button.day.selected {
     display: flex;
     flex-direction: column;
     color: #000000;
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-family-poppins);
     gap: 3vh;
 }
 
@@ -1115,61 +1074,45 @@ button.day.selected {
     align-items: center;
     gap: 5vh;
     padding: 0;
-    transition: transform 0.3s ease-in-out; 
+    transition: transform 0.3s ease-in-out;
 }
 
 .contact__item:hover {
     transform: translateX(10px);
-
 }
 
 .contact__item p {
     margin: 0;
     max-width: 320px;
-    transition: all 0.3s; 
+    transition: all 0.3s;
 }
 
 .contact__item p:hover {
-    color: #495057;
+    color: var(--color-secondary);
 }
 
-
 @media (max-width: 1024px) {
-    /* Escondendo os itens de navegação quando o menu não estiver expandido */
     .navbar-nav {
         display: none;
-        flex-direction: column; /* Garante que os itens fiquem empilhados */
+        flex-direction: column;
     }
 
-    /* Mostrar os itens de navegação dentro do menu hamburguer quando ele for expandido */
     .navbar-collapse.show .navbar-nav {
         display: flex;
     }
 
-    /* Alinhar o botão hamburguer à direita */
     .navbar-toggler {
         display: block !important;
     }
 
-    /* Aumenta a largura da navbar-collapse para ocupar toda a largura */
     .navbar-collapse {
         width: 100%;
-    }
-
-    /* Alinhando os itens no final da navbar */
-    .navbar-collapse {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
     }
 }
 
-/* Esconde o botão hamburguer e exibe os itens do menu em telas maiores que 1024px */
-@media (min-width: 1025px) {
+@media (min-width: 1025px) {}
 
-}
-
-
-@media (max-width: 768px) {
-    /* Ajustes para mobile */
-}
+@media (max-width: 768px) {}
