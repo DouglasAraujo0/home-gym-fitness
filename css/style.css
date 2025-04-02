@@ -1160,15 +1160,30 @@ button.day.selected {
         align-items: center;
         margin-bottom: -20px;
     }
+
     .texto__blog {
         text-align: center;
         max-width: 630px;
     }
 
+    .bi-footer {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .background__footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 
 
+
+
+    
 
 @media (max-width: 1346px) {
     .container__sobre__nos {
@@ -1267,6 +1282,7 @@ button.day.selected {
     .card__anual__mensal {
         margin-bottom: -45px;
     }
-
+    
+    
 }
 
