@@ -1154,6 +1154,17 @@ button.day.selected {
         margin-bottom: -20px;
     }
 
+    .cards__blog {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: -20px;
+    }
+    .texto__blog {
+        text-align: center;
+        max-width: 630px;
+    }
+
 }
 
 
