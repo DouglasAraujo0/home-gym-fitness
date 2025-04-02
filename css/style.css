@@ -1175,6 +1175,10 @@ button.day.selected {
         font-size: 18px;
     }
 
+    .titulo__sobre__nos {
+        margin-top: -20vh;
+    }
+
     .banners {
         display: flex;
         flex-direction: column;

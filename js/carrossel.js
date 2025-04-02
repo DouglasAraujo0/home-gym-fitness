@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 export function iniciarCarrossel() {
     const wrapperCarrossel = document.querySelector('.carrossel-wrapper');
     const imagens = document.querySelectorAll('.carrossel-image');
-    
+    let tamanhoSlide = imagens[0].getBoundingClientRect().width; // Pega a largura exata do slide
     let intervalo = 3000; // Tempo entre trocas
     let isTransitioning = false;
 
@@ -27,7 +27,7 @@ export function iniciarCarrossel() {
         isTransitioning = true;
 
         wrapperCarrossel.style.transition = 'transform 1s ease-in-out';
-        wrapperCarrossel.style.transform = `translateX(-${57.5}vh)`;
+        wrapperCarrossel.style.transform = `translateX(-${tamanhoSlide}px)`;
 
         setTimeout(() => {
             wrapperCarrossel.style.transition = 'none'; // Remove transição antes de reposicionar
