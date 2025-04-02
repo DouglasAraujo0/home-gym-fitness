@@ -1126,7 +1126,27 @@ button.day.selected {
         width: 100%;
         padding: 10px 0;
     }
+}
 
+
+
+
+@media (max-width: 1346px) {
+    .container__sobre__nos {
+        margin-left: 12vw;
+    }
+
+    .sobre__nos {
+        display: flex;
+        flex-wrap: wrap;
+    }
     
+    .imagem__puxada__zoom {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5vh;
+        display: block;
+        text-align: center;
+    }
 }
 
