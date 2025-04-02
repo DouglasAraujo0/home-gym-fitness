@@ -17,6 +17,10 @@
     --banner-padding: 20px;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
 .image-container {
     width: 100%;
     height: 100vh;
@@ -91,6 +95,8 @@ nav, .nav, .navbar-brand, .nav-link, .nav-item, #navbarNav {
     padding: 16px 0;
     background-color: white;
     transition: padding 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .navbar.scrolled {
@@ -123,7 +129,6 @@ nav, .nav, .navbar-brand, .nav-link, .nav-item, #navbarNav {
 }
 
 #navbarNav {
-    display: flex;
     justify-content: flex-end;
 }
 
@@ -132,7 +137,18 @@ nav, .nav, .navbar-brand, .nav-link, .nav-item, #navbarNav {
 }
 
 div.container-fluid {
-    margin: 0 60px;
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 100%;
+}
+
+.navbar-expand-lg {
+    width: 100%;
+    max-width: 100vw;
+}
+
+.navbar-toggler {
+    margin-right: 30px;
 }
 
 .titulo {
@@ -1091,28 +1107,26 @@ button.day.selected {
     color: var(--color-secondary);
 }
 
-@media (max-width: 1024px) {
-    .navbar-nav {
-        display: none;
-        flex-direction: column;
-    }
-
-    .navbar-collapse.show .navbar-nav {
-        display: flex;
-    }
-
-    .navbar-toggler {
-        display: block !important;
-    }
-
+@media (max-width: 991px) {
     .navbar-collapse {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .navbar-nav {
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        align-items: center;
     }
+
+    .nav-item {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    
 }
 
-@media (min-width: 1025px) {}
-
-@media (max-width: 768px) {}
