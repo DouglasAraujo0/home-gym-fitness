@@ -3,14 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentIndex = 0;
 
     function changeImage() {
-        images[currentIndex].classList.remove("active"); // Esconde a imagem atual
-        currentIndex = (currentIndex + 1) % images.length; // Passa para a próxima
-        images[currentIndex].classList.add("active"); // Exibe a nova imagem
+        images[currentIndex].classList.remove("active"); 
+        currentIndex = (currentIndex + 1) % images.length; 
+        images[currentIndex].classList.add("active"); 
     }
 
     setInterval(changeImage, 5000);
 });
-
 
 
 export function iniciarCarrossel() {
@@ -23,23 +22,40 @@ export function iniciarCarrossel() {
     const ultimoClone = imagens[totalImagens - 1].cloneNode(true);
     wrapperCarrossel.appendChild(primeiroClone);
     wrapperCarrossel.insertBefore(ultimoClone, imagens[0]);
-    
+
     const imagensAtualizadas = document.querySelectorAll('.carrossel-image');
     const totalImagensAtualizado = imagensAtualizadas.length;
-    wrapperCarrossel.style.transform = `translateX(-${33.33}%)`;
-    
+
+    function calcularTamanhoSlide() {
+        return window.innerWidth <= 991 ? 50 : 33.33;
+    }
+
+    function atualizarPosicao() {
+        let tamanhoSlide = calcularTamanhoSlide();
+        wrapperCarrossel.style.transform = `translateX(-${(indiceAtual + 1) * tamanhoSlide}%)`;
+    }
+
+    atualizarPosicao();
+
     function moverCarrossel() {
         indiceAtual++;
+        let tamanhoSlide = calcularTamanhoSlide();
         wrapperCarrossel.style.transition = 'transform 1s ease-in-out';
-        wrapperCarrossel.style.transform = `translateX(-${(indiceAtual + 1) * 33.33}%)`;
-        
+        wrapperCarrossel.style.transform = `translateX(-${(indiceAtual + 1) * tamanhoSlide}%)`;
+
         if (indiceAtual >= totalImagensAtualizado - 2) {
             setTimeout(() => {
                 wrapperCarrossel.style.transition = 'none';
-                wrapperCarrossel.style.transform = `translateX(-${33.33}%)`;
                 indiceAtual = 0;
+                atualizarPosicao();
             }, 1000);
         }
     }
+
     setInterval(moverCarrossel, 3000);
+
+    window.addEventListener('resize', () => {
+        wrapperCarrossel.style.transition = 'none';
+        atualizarPosicao();
+    });
 }
