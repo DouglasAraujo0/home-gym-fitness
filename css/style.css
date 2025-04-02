@@ -1147,11 +1147,7 @@ button.day.selected {
         gap: 14px;
     }
 
-
     
-   
-
-
 
 }
 
@@ -1226,6 +1222,35 @@ button.day.selected {
 
     .btn__card__7days {
         align-items: flex-start;
+        margin-bottom: 25px;
     }
+
+    .planos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+        width: 100%;
+        overflow: hidden;
+        margin-left: auto;
+    }
+
+    .descricao__planos {
+        min-width: 100vh;
+    }
+
+    .plano__anual__mensal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        margin-left: 0;
+    }
+
+    .card__anual__mensal {
+        margin-bottom: -45px;
+    }
+
 }
 
