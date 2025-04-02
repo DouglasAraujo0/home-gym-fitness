@@ -1126,6 +1126,12 @@ button.day.selected {
         width: 100%;
         padding: 10px 0;
     }
+
+    .banners {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 
