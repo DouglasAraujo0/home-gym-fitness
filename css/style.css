@@ -1147,10 +1147,12 @@ button.day.selected {
         gap: 14px;
     }
 
-    .container__nutricao {
-        display: flex;
-        flex-direction: column;
-    }
+
+    
+   
+
+
+
 }
 
 
@@ -1172,6 +1174,58 @@ button.day.selected {
         margin-top: 5vh;
         display: block;
         text-align: center;
+    }
+
+    .container__nutricao {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .play-button-container {
+        position: absolute;
+        top: 38%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-bottom: 0;
+    }
+    
+    .video-text {
+        position: absolute;
+        top: 43%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .card__7days {
+        flex-direction: column;
+        width: 70vw;
+        height: auto;
+        align-items: center;
+        text-align: center;
+        margin-top: -35vh;
+    }
+
+    .card__7days .col-md-4,
+    .card__7days .col-md-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .card__body__7days {
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        margin-top: 3vh;
+    }
+
+    .card__title__7days,
+    .card__text__7days,
+    .card__7days .form-control {
+        max-width: 50vw;
+    }
+
+    .btn__card__7days {
+        align-items: flex-start;
     }
 }
 
