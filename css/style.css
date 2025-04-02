@@ -1147,7 +1147,12 @@ button.day.selected {
         gap: 14px;
     }
 
-    
+    .cards__treinadores {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: -20px;
+    }
 
 }
 
