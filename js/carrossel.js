@@ -1,3 +1,18 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".image-container img");
+    let currentIndex = 0;
+
+    function changeImage() {
+        images[currentIndex].classList.remove("active"); // Esconde a imagem atual
+        currentIndex = (currentIndex + 1) % images.length; // Passa para a próxima
+        images[currentIndex].classList.add("active"); // Exibe a nova imagem
+    }
+
+    setInterval(changeImage, 5000);
+});
+
+
+
 export function iniciarCarrossel() {
     const wrapperCarrossel = document.querySelector('.carrossel-wrapper');
     const imagens = document.querySelectorAll('.carrossel-image');
