@@ -21,19 +21,22 @@ html, body {
     overflow-x: hidden;
     width: 100%;
 }
+
 .image-container {
     width: 100%;
-    height: 100vh;
+    height: auto;
     position: relative;
     overflow: hidden;
+    padding-top: 120vh;
 }
+
 
 .image-container img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 120vh;
+    height: auto;
     object-fit: cover;
     opacity: 0;
     transition: opacity 5s ease-in-out, transform 0.4s ease;
@@ -55,7 +58,7 @@ html, body {
     font-family: var(--font-family-oswald);
     z-index: 10;
     text-align: center;
-    max-width: var(--max-width);
+    max-width: 100%;
     line-height: 1.2;
     white-space: nowrap;
 }
@@ -110,7 +113,7 @@ nav, .nav, .navbar-brand, .nav-link, .nav-item, #navbarNav {
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    margin: 0 16px 0 0;
+    margin: 0 16px 0 50px;
     padding-top: 5px;
 }
 
@@ -130,6 +133,7 @@ nav, .nav, .navbar-brand, .nav-link, .nav-item, #navbarNav {
 
 #navbarNav {
     justify-content: flex-end;
+    margin-right: 50px;
 }
 
 .navbar-expand-lg {
@@ -1107,14 +1111,43 @@ button.day.selected {
     color: var(--color-secondary);
 }
 
-@media (min-width: 991px) {
-    .carrossel-image {
-        width: calc(33.33% - 12px);
+
+
+@media (max-width: 767px) {
+    .navbar-collapse {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    
+
 }
+
 
 @media (max-width: 991px) {
     .navbar-collapse {
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -1126,11 +1159,20 @@ button.day.selected {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
 
     .nav-item {
         width: 100%;
-        padding: 10px 0;
+        text-align: center;
+        margin-left: 8%; 
+    }
+
+    .nav-link {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+        font-size: 18px;
     }
 
     .banners {
@@ -1140,7 +1182,7 @@ button.day.selected {
     }
 
     .carrossel-image {
-        width: calc(50% - 12px);
+        width: 50%;
     }
 
     .carrossel-wrapper {
@@ -1178,12 +1220,6 @@ button.day.selected {
         align-items: center;
     }
 }
-
-
-
-
-
-    
 
 @media (max-width: 1346px) {
     .container__sobre__nos {
@@ -1282,7 +1318,5 @@ button.day.selected {
     .card__anual__mensal {
         margin-bottom: -45px;
     }
-    
-    
 }
 

@@ -11,51 +11,39 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(changeImage, 5000);
 });
 
-
 export function iniciarCarrossel() {
     const wrapperCarrossel = document.querySelector('.carrossel-wrapper');
     const imagens = document.querySelectorAll('.carrossel-image');
-    const totalImagens = imagens.length;
-    let indiceAtual = 0;
     
-    const primeiroClone = imagens[0].cloneNode(true);
-    const ultimoClone = imagens[totalImagens - 1].cloneNode(true);
-    wrapperCarrossel.appendChild(primeiroClone);
-    wrapperCarrossel.insertBefore(ultimoClone, imagens[0]);
+    let intervalo = 3000; // Tempo entre trocas
+    let isTransitioning = false;
 
-    const imagensAtualizadas = document.querySelectorAll('.carrossel-image');
-    const totalImagensAtualizado = imagensAtualizadas.length;
-
-    function calcularTamanhoSlide() {
-        return window.innerWidth <= 991 ? 50 : 33.33;
+    function atualizarTamanhoSlide() {
+        tamanhoSlide = imagens[0].getBoundingClientRect().width;
     }
-
-    function atualizarPosicao() {
-        let tamanhoSlide = calcularTamanhoSlide();
-        wrapperCarrossel.style.transform = `translateX(-${(indiceAtual + 1) * tamanhoSlide}%)`;
-    }
-
-    atualizarPosicao();
 
     function moverCarrossel() {
-        indiceAtual++;
-        let tamanhoSlide = calcularTamanhoSlide();
-        wrapperCarrossel.style.transition = 'transform 1s ease-in-out';
-        wrapperCarrossel.style.transform = `translateX(-${(indiceAtual + 1) * tamanhoSlide}%)`;
+        if (isTransitioning) return;
+        isTransitioning = true;
 
-        if (indiceAtual >= totalImagensAtualizado - 2) {
-            setTimeout(() => {
-                wrapperCarrossel.style.transition = 'none';
-                indiceAtual = 0;
-                atualizarPosicao();
-            }, 1000);
-        }
+        wrapperCarrossel.style.transition = 'transform 1s ease-in-out';
+        wrapperCarrossel.style.transform = `translateX(-${57.5}vh)`;
+
+        setTimeout(() => {
+            wrapperCarrossel.style.transition = 'none'; // Remove transição antes de reposicionar
+
+            // Move o primeiro slide para o final
+            let primeiroSlide = wrapperCarrossel.firstElementChild;
+            wrapperCarrossel.appendChild(primeiroSlide);
+
+            // Reseta a posição sem o usuário perceber
+            wrapperCarrossel.style.transform = `translateX(0)`;
+
+            isTransitioning = false;
+        }, 1000); // Tempo da transição
     }
 
-    setInterval(moverCarrossel, 3000);
-
-    window.addEventListener('resize', () => {
-        wrapperCarrossel.style.transition = 'none';
-        atualizarPosicao();
-    });
+    setInterval(moverCarrossel, intervalo);
+    window.addEventListener('resize', atualizarTamanhoSlide);
 }
+
