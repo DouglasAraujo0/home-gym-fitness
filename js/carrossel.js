@@ -1,21 +1,8 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const images = document.querySelectorAll(".image-container img");
-    let currentIndex = 0;
-
-    function changeImage() {
-        images[currentIndex].classList.remove("active"); 
-        currentIndex = (currentIndex + 1) % images.length; 
-        images[currentIndex].classList.add("active"); 
-    }
-
-    setInterval(changeImage, 5000);
-});
-
 export function iniciarCarrossel() {
     const wrapperCarrossel = document.querySelector('.carrossel-wrapper');
     const imagens = document.querySelectorAll('.carrossel-image');
-    let tamanhoSlide = imagens[0].getBoundingClientRect().width; // Pega a largura exata do slide
-    let intervalo = 3000; // Tempo entre trocas
+    let tamanhoSlide = imagens[0].getBoundingClientRect().width;
+    let intervalo = 3000;
     let isTransitioning = false;
 
     function atualizarTamanhoSlide() {
@@ -30,17 +17,15 @@ export function iniciarCarrossel() {
         wrapperCarrossel.style.transform = `translateX(-${tamanhoSlide}px)`;
 
         setTimeout(() => {
-            wrapperCarrossel.style.transition = 'none'; // Remove transição antes de reposicionar
+            wrapperCarrossel.style.transition = 'none';
 
-            // Move o primeiro slide para o final
             let primeiroSlide = wrapperCarrossel.firstElementChild;
             wrapperCarrossel.appendChild(primeiroSlide);
 
-            // Reseta a posição sem o usuário perceber
             wrapperCarrossel.style.transform = `translateX(0)`;
 
             isTransitioning = false;
-        }, 1000); // Tempo da transição
+        }, 1000);
     }
 
     setInterval(moverCarrossel, intervalo);
