@@ -41,6 +41,7 @@ html, body {
     opacity: 0;
     transition: opacity 5s ease-in-out, transform 0.4s ease;
     background-position: center;
+    filter: brightness(0.6);
 }
 
 .image-container img.active {
@@ -379,6 +380,11 @@ div.container-fluid {
     height: 100%;
     object-fit: cover;
     filter: brightness(0.5);
+    transition: all .5s;
+}
+
+.carrossel-image img:hover {
+    filter: brightness(.3);
 }
 
 .carrossel-image h4,
