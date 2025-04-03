@@ -96,17 +96,15 @@
     font-family: var(--font-family-oswald);
     font-size: 40px;
     font-weight: 600;
-    min-width: 486px;
 }
 
 .imagem__nutricao img {
-    margin-left: 90px;
     width: 200px;
     height: 200px;
 }
 
 .texto__nutricao {
-    margin-left: 79px;
+    margin-left: 75px;
 }
 
 .texto__nutricao h5 {

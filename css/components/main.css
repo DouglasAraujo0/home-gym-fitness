@@ -5,10 +5,9 @@ html, body {
 
 .image-container {
     width: 100%;
-    height: auto;
+    height: 100vh;
     position: relative;
     overflow: hidden;
-    padding-top: 120vh;
 }
 
 
