@@ -1,0 +1,13 @@
+:root {
+    --color-primary: #212121;
+    --color-secondary: #495057;
+    --font-family-oswald: "Oswald", sans-serif;
+    --font-family-poppins: "Poppins", sans-serif;
+    --btn-padding: 15px 40px;
+    --btn-border-radius: 7px;
+    --transition-duration: 0.5s;
+    --transition-timing: ease;
+    --max-width: 90%;
+    --banner-max-width: 500px;
+    --banner-padding: 20px;
+}

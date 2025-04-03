@@ -1,0 +1,122 @@
+
+.titulo__classes {
+    padding: 0 0 48px 0;
+}
+
+.carousel-inner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.carousel-item {
+    transition: transform var(--transition-duration) var(--transition-timing);
+}
+
+.carrossel-wrapper {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    width: max-content;
+    gap: 24px;
+}
+
+.carrossel-container {
+    width: 88%;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.carrossel-image {
+    flex: 0 0 auto;
+    width: calc(33.33% - 20px);
+    height: 500px;
+    position: relative;
+}
+
+.carrossel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+    transition: all .5s;
+}
+
+.carrossel-image img:hover {
+    filter: brightness(.3);
+}
+
+.carrossel-image h4,
+.carrossel-image p {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+.carrossel-image h4 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-family-oswald);
+    font-weight: 600;
+    font-size: 24px;
+    margin: 8px;
+    white-space: nowrap;
+}
+
+.carrossel-image p {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-family-poppins);
+    font-size: 16px;
+    margin: 10px 0 0;
+}
+
+
+.container__nutricao {
+    display: flex;
+    margin: 45px 85px 50px;
+}
+
+.titulo__nutricao h5 {
+    font-family: var(--font-family-oswald);
+    font-size: 40px;
+    font-weight: 600;
+    min-width: 486px;
+}
+
+.imagem__nutricao img {
+    margin-left: 90px;
+    width: 200px;
+    height: 200px;
+}
+
+.texto__nutricao {
+    margin-left: 79px;
+}
+
+.texto__nutricao h5 {
+    font-family: var(--font-family-poppins);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.texto__nutricao p {
+    font-family: var(--font-family-poppins);
+    font-size: 16px;
+    max-width: 800px;
+}

@@ -1,0 +1,92 @@
+.paragrafo__classes {
+    font-size: 15px;
+}
+
+.texto__classes {
+    font-size: 29px;
+}
+
+.titulo__classes__2 {
+    margin-bottom: 50px;
+}
+
+.texto__classes__2 {
+    font-size: calc(1.325rem + 0.8vw);
+}   
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 2px 10px rgba(201, 192, 192, 0.91);
+    border: none;
+    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-body h5 {
+    align-items: center;
+}
+
+.card-title {
+    font-size: 22px;
+    font-family: var(--font-family-poppins);
+    text-align: center;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 16px;
+    font-family: var(--font-family-poppins);
+    color: var(--color-secondary);
+    flex-grow: 1;
+}
+
+.btn__card {
+    position: absolute;
+    border-radius: var(--btn-border-radius);
+    font-size: 16px;
+    top: 84%;
+    left: 20%;
+    padding: 11px 13px;
+    border: none;
+    margin: 0;
+    border: 2px solid var(--color-secondary);
+}
+
+.container__numeros {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    font-family: var(--font-family-poppins);
+    margin-top: 90px;
+}
+
+.numero {
+    font-weight: 600;
+    font-size: 52px;
+    color: #000;
+}
+
+.titulo__numeros {
+    font-size: 22px;
+    color: #9A9A9A;
+    font-weight: 500;
+}
