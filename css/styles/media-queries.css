@@ -1,3 +1,6 @@
+
+
+
 @media screen and (max-width: 425px) {
     .navbar-brand {
         justify-content: flex-start !important;
@@ -122,6 +125,10 @@
         justify-content: center;
         overflow: hidden;
     }
+
+    .video-text {
+        min-width: 50vh;
+    }
     
     .imagem__corda {
         width: 100%;
@@ -136,8 +143,8 @@
 
     .video-text p {
         font-size: calc(1.625rem + 4.5vw);
-        min-width: 40vh;
-        margin: 0px 0px 15vh 10px;
+        min-width: 42vh;
+        margin: 0px 5vh 15vh 50px;
     }
 
     .card__7days {
@@ -180,7 +187,7 @@
     }
     
     .planos {
-        margin: 0 auto !important;
+        margin: 10vh auto !important;
         width: 87% !important;
     }
 
@@ -198,9 +205,15 @@
         margin: 50px 0px 0px 0px !important;
     }
     
-      .yearly__plan,
-      .monthly__plan {
-        width: 44vh !important;
+    .yearly__plan,
+    .monthly__plan {
+        width: 53vh !important;
+        height: 75vh !important;
+    }
+
+    .btn__mensal__anual {
+        white-space: nowrap;
+        width: 100px !important;
     }
 
     .monthly__plan {
@@ -209,6 +222,7 @@
 
     .titulo__treinadores {
         margin: 0 !important;
+        padding: 0 !important;
     }
 
     .background__footer {
@@ -216,7 +230,7 @@
     }
 
     .our__service {
-        margin-right: 20vh;
+        margin-right: 15vh;
     }
 
     .titulo__our__service {
@@ -228,73 +242,6 @@
     }
 } 
 
-
-@media screen and (max-width: 320px) {
-    .cards__blog__blog {
-        height: 115vh;
-    }
-    
-}
-
-
-
-
-@media screen and (min-width: 375px){
-    .yearly__plan,
-    .monthly__plan {
-        width: 52vh !important;
-    }
-}
-
-@media screen and (min-width: 425px){
-    .btn__card  {
-        margin-left: -7px !important;
-    }
-
-    .video-text p {
-        font-size: calc(1.625rem + 4.5vw);
-        min-width: 50vh;
-        margin: 0px 0px 10vh 8vh;
-    }
-
-    .yearly__plan,
-    .monthly__plan {
-        width: 59vh !important;
-    }
-
-    .btn__blog {
-        margin-left: 10px !important;
-    }
-}
-
-@media (max-width: 767px) {
-    .navbar-collapse {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .navbar-nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        padding: 0;
-    }   
-
-    .nav-item {
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-link {
-        display: block;
-        width: 100%;
-        padding: 12px 0;
-    }
-
-}
 
 
 @media (max-width: 991px) {
@@ -367,6 +314,8 @@
     .bi-footer {
         padding: 10px 15px;
     }
+
+    
 }
 
 @media (max-width: 1280px) {
