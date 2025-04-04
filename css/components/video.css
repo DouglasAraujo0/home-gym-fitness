@@ -87,7 +87,7 @@
     color: #FFFFFF;
     font-family: var(--font-family-oswald);
     font-weight: 700;
-    max-width: 500px;
+    max-width: 100vh;
 }
 
 .card__7days {

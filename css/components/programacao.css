@@ -163,7 +163,7 @@ button.day.selected {
 }
 
 .list-group {
-    height: 60vh;
+    height: auto;
     display: flex;
     flex-direction: column;
 }
@@ -172,13 +172,11 @@ button.day.selected {
     text-align: center;
 }
 
-.list-group-item.item-ano {
-    padding: 20px 114.1px;
+.list-group-item.item-ano,
+.list-group-item.item-mes {
+    padding: 20px 0;
 }
 
-.list-group-item.item-mes {
-    padding: 20px 104.4px;
-}
 
 .list-group-item:last-of-type {
     border: none;
