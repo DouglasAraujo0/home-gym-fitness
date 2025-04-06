@@ -1,7 +1,4 @@
-
-
-
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
     .navbar-brand {
         justify-content: flex-start !important;
         margin-left: 15px !important;
@@ -178,8 +175,7 @@
         text-align: center;
         margin: 25px 0;
         gap: 10px;
-      }
-    
+      }    
       .horario,
       .programacao__aula,
       .programacao__professor {
@@ -202,18 +198,30 @@
     .plano__anual__mensal {
         flex-direction: column;
         gap: 5rem !important;
-        margin: 50px 0px 0px 0px !important;
+        margin: 50px 0 !important;
+        align-items: center;
     }
-    
+
     .yearly__plan,
     .monthly__plan {
-        width: 53vh !important;
-        height: 75vh !important;
+        width: 90vw !important;
+        height: auto !important;
+    }
+
+    .cards__blog {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: -20px;
+    }
+
+    .card__body__blog {
+        height: 52vh !important;
     }
 
     .btn__mensal__anual {
-        white-space: nowrap;
-        width: 100px !important;
+        width: 70% !important;
+        font-size: 1rem;
     }
 
     .monthly__plan {
@@ -230,7 +238,7 @@
     }
 
     .our__service {
-        margin-right: 15vh;
+        margin-right: 20vh;
     }
 
     .titulo__our__service {
@@ -299,12 +307,7 @@
         margin-bottom: -20px;
     }
 
-    .cards__blog {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: -20px;
-    }
+    
 
     .texto__blog {
         text-align: center;
