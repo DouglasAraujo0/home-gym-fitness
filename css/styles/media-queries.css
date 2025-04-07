@@ -7,6 +7,12 @@
         margin-right: 10px !important;
     }
 
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        margin-left: 8%; 
+    } 
+
     .navbar-collapse {
         display: block !important;
         height: 0;
@@ -51,12 +57,18 @@
         height: 65vh !important;
     }
 
+    .banners {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .titulo__classes {
         display: flex;
         flex-direction: row;
         text-align: center; 
     }
-
+    
     .carrossel-image {
         width: 100% !important;
         display: flex;
@@ -176,6 +188,11 @@
         margin: 25px 0;
         gap: 10px;
       }    
+
+      .programacao {
+        margin-bottom: 100px !important;
+      }
+
       .horario,
       .programacao__aula,
       .programacao__professor {
@@ -183,31 +200,49 @@
     }
     
     .planos {
-        margin: 10vh auto !important;
-        width: 87% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+        margin: 0 !important;
     }
 
-    .titulo__planos {
-        max-width: 43vh;
-    }
-
+    .titulo__planos,
     .texto__planos {
-        max-width: 42.5vh;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
     }
 
     .plano__anual__mensal {
+        display: flex;
         flex-direction: column;
-        gap: 5rem !important;
-        margin: 50px 0 !important;
         align-items: center;
+        gap: 2rem;
+        width: 100%;
+        margin-top: 3rem !important;
+        margin-left: 0 !important;
     }
 
     .yearly__plan,
     .monthly__plan {
-        width: 90vw !important;
-        height: auto !important;
+        width: 90%;
+        display: flex;
+        justify-content: center;
     }
 
+    .card__anual__mensal {
+        width: 85% !important;
+        max-width: 350px;
+    }
+
+    .btn__mensal__anual {
+        margin: 1.5rem auto 0;
+        display: block;
+        width: 80%;
+        text-align: center;
+    }
+    
     .cards__blog {
         display: flex;
         flex-direction: column;
@@ -219,34 +254,41 @@
         height: 52vh !important;
     }
 
-    .btn__mensal__anual {
-        width: 70% !important;
-        font-size: 1rem;
-    }
-
-    .monthly__plan {
-        padding-bottom: 8vh;
-    }
-
-    .titulo__treinadores {
-        margin: 0 !important;
-        padding: 0 !important;
+    .texto__blog {
+        text-align: center;
+        max-width: 630px;
     }
 
     .background__footer {
         flex-direction: column !important;
+        align-items: flex-start !important;
+        padding-left: 10vw !important;
+        gap: 30px;
     }
 
-    .our__service {
-        margin-right: 35vw;
-    }
-
-    .titulo__our__service {
-        white-space: nowrap;
-    }
-
+    .our__service,
     .contact__us {
-        margin-right: 1vh;
+        margin: 0 !important;
+        white-space: normal !important;
+    }
+
+    .titulo__contact__us,
+    .titulo__our__service {
+        white-space: normal !important;
+    }
+
+    .bi-footer {
+        padding: 10px 15px;
+    }
+
+    .texto__info__footer,
+    .texto__endereco {
+        text-align: left;
+    }
+
+    .items__contact__us,
+    .lista__our__service {
+        padding-left: 0;
     }
 } 
 
@@ -270,70 +312,65 @@
 
 
 
+@media (min-width: 427px) and (max-width: 991px) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 991px) {
-    .navbar-collapse {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+    .navbar-brand {
+        justify-content: flex-start !important;
+        margin-left: 15px !important;
     }
-
-    .navbar-nav {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    .navbar-toggler {
+        margin-right: 10px !important;
     }
 
     .nav-item {
         width: 100%;
         text-align: center;
         margin-left: 8%; 
+    } 
+
+    .navbar-collapse {
+        display: block !important;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: height 0.4s ease-in-out, .5s ease-in-out;
     }
 
-    .nav-link {
+    .navbar-collapse.show {
+        height: auto;
+        opacity: 1;
+    }
+    
+    .image-container img {
+        padding-top: 10vh;
+        height: 70vh !important;
+    }
+
+    .image-container h1 {
+        position: absolute;
+        top: 35%;
+        min-width: 50vh;
+        white-space: normal; 
+        word-break: break-word; 
+        text-align: center;
+    }
+
+    .image-container button {
+        top: 48%;
+    }
+    
+    #sobreNos {
+        margin-top: -35vh !important;
+    }
+
+    .imagem__puxada__zoom {
         display: block;
-        width: 100%;
-        padding: 12px 0;
-        font-size: 18px;
+        margin: 20px auto;
+        min-width: 57vh;
+        height: 100vh !important;
+        text-align: center;
     }
-
-    .titulo__sobre__nos {
-        margin-top: -20vh;
-    }
-
+    
     .banners {
         display: flex;
         flex-direction: column;
@@ -341,137 +378,254 @@
     }
 
     .carrossel-image {
-        width: 50%;
+        width: 50% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+        position: relative;
+        text-align: center;
+    }
+    
+    .carrossel-image h4 {
+        top: 30% !important;
+        white-space: normal !important;
+        margin: 0 auto !important; 
     }
 
-    .carrossel-wrapper {
-        gap: 14px;
+
+    .container__nutricao {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        max-width: 1100px;
+        width: 100%;
+        margin: 0px !important;
+        padding: 0px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    
+    .texto__nutricao {
+        margin-top: 30px;
+        margin-left: 0 !important;
+        max-width: 90%;
     }
 
-    .cards__treinadores {
+    .imagem__nutricao {
+        margin-top: 20px;
+    }
+    
+    .imagem__nutricao img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .video-section {
+        position: relative;
+        width: 100%;
+        height: 120vh !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .video-text {
+        min-width: 50vh;
+    }
+    
+    .imagem__corda {
+        width: 100%;
+        height: 100vh !important;
+        object-fit: cover;
+        display: block;
+    }
+
+    .play-icon {
+        margin-bottom: 15vh;
+    }
+
+    .video-text p {
+        font-size: calc(1.625rem + 4.5vw);
+        min-width: 42vh;
+        margin: 0px 5vh 15vh 50px;
+    }
+
+    .card__body__7days h5,
+    .card__body__7days  p {
+        text-align: center;
+    }
+
+    .card__7days {
+        flex-direction: column;
+        height: auto !important;
+        max-width: 90vw;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    
+      .card__7days .col-md-4,
+      .card__7days .col-md-8 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+      .form-control {
+        max-width: 40vh !important ;
+    }
+
+    .btn__card__7days {
+        width: 35vw;
+        text-align: center;
+        margin: 25px auto !important;
+    }
+
+    .week {
+        flex-wrap: wrap;
+    }
+
+    .aula__info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 25px 0;
+        gap: 10px;
+    }    
+      
+    .horario,
+    .programacao__aula,
+    .programacao__professor {
+        width: 100% !important;
+    }
+
+    .programacao {
+        margin-bottom: 100px !important;
+    }
+
+    .planos {
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        padding: 0 20px;
+        margin: 0 !important;
+    }
+
+    .titulo__planos,
+    .texto__planos {
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .plano__anual__mensal {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        width: 100%;
+        margin-top: 3rem !important;
+        margin-left: 0 !important;
+    }
+
+    .yearly__plan,
+    .monthly__plan {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .card__anual__mensal {
+        width: 100% !important;
+        max-width: 350px;
+    }
+
+    .card-header {
+        height: 85px;
+    }
+    .btn__planos {
+        display: block !important;
+        text-align: center;
+    }
+
+    .btn__mensal__anual {
+        margin: 1.5rem auto 0;
+        display: block;
+        width: 80%;
+        text-align: center;
+    }
+
+    
+    .cards__blog {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-bottom: -20px;
     }
 
-    
+    .card__body__blog {
+        height: 52vh !important;
+    }
 
     .texto__blog {
         text-align: center;
         max-width: 630px;
     }
 
+    .background__footer {
+        flex-direction: column !important;
+    }
+
+    .our__service {
+        margin-right: 35vw;
+    }
+
+    .contact__us {
+        margin-right: 1vh;
+    }
+    
     .bi-footer {
         padding: 10px 15px;
     }
-
-    
 }
 
-@media (max-width: 1280px) {
-    .background__footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
 
-@media (max-width: 1346px) {
-    .container__sobre__nos {
-        margin-left: 12vw;
-    }
 
-    .sobre__nos {
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .cards {
         display: flex;
         flex-wrap: wrap;
-    }
-    
-    .imagem__puxada__zoom {
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 5vh;
-        display: block;
-        text-align: center;
-    }
-
-    .container__nutricao {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .play-button-container {
-        position: absolute;
-        top: 38%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin-bottom: 0;
-    }
-    
-    .video-text {
-        position: absolute;
-        top: 43%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .card__7days {
-        flex-direction: column;
-        width: 70vw;
-        height: auto;
-        align-items: center;
-        text-align: center;
-        margin-top: -35vh;
-    }
-
-    .card__7days .col-md-4,
-    .card__7days .col-md-8 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-
-    .card__body__7days {
-        align-items: center;
         justify-content: center;
-        text-align: left;
-        margin-top: 3vh;
+        gap: 20px;
     }
 
-    .card__title__7days,
-    .card__text__7days,
-    .card__7days .form-control {
-        max-width: 50vw;
+    .cards .card {
+        flex: 0 0 45%;
+        max-width: 45%;
+        margin: 0 auto;
     }
 
-    .btn__card__7days {
-        align-items: flex-start;
-        margin-bottom: 25px;
+    .cards .card:nth-child(3) {
+        flex: 0 0 90%;
+        max-width: 90%;
     }
 
-    .planos {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 100px;
+    .cards .card:nth-child(3) .imagem__puxada__card img {
         width: 100%;
-        overflow: hidden;
-        margin-left: auto;
+        height: auto;
+        object-fit: cover;
     }
 
-    .descricao__planos {
-        min-width: 100vh;
+    .btn__card {
+        margin-left: 0 !important;
+        text-align: center;
     }
 
-    .plano__anual__mensal {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 50px;
-        margin-top: 50px;
-        margin-left: 0;
-    }
-
-    .card__anual__mensal {
-        margin-bottom: -45px;
-    }
-}
+    .cards .card:nth-child(3) .btn__card {
+        margin:  0 28vw !important;
+        white-space: nowrap;
+        padding: 10px 50px;
+      }
+} 
