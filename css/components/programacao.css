@@ -138,7 +138,7 @@ button.day.selected {
 .plano__anual__mensal {
     display: flex;
     margin-left: 10vh;
-    gap: 4vh;
+    gap: 10vh;
     margin-top: -25px;
 }
 
