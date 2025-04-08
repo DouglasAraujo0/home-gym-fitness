@@ -1,7 +1,7 @@
 #!/bin/bash
 
 projeto="/opt/dev/projects/home-gym-fitness"
-nginx="/mnt/c/dev/"
+nginx="/var/www/html"
 
 if [ -d "$projeto" ] && [ -d "$nginx" ]; then
   for file in "$projeto"/*; do
