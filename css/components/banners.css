@@ -1,0 +1,73 @@
+.banners {
+    padding: 120px 6%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.container__banner__1,
+.container__banner__2,
+.container__banner__3 {
+    max-width: var(--banner-max-width);
+    padding: var(--banner-padding);
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(201, 192, 192, 0.91);
+    position: relative;
+}
+
+.container__banner__1 .num__1,
+.container__banner__2 .num__2,
+.container__banner__3 .num__3 {
+    font-family: var(--font-family-oswald);
+    font-weight: bold;
+    font-size: 26px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-right: 6px;
+    border-right: solid 3px var(--color-secondary);
+    height: 160px;
+    display: flex;
+    align-items: center;
+}
+
+.container__banner__1 .banner__1 h4,
+.container__banner__2 .banner__2 h4,
+.container__banner__3 .banner__3 h4 {
+    font-family: var(--font-family-poppins);
+    font-size: 24px;
+    font-weight: 600;
+    max-width: 300px;
+}
+
+.container__banner__1 .banner__1 h4,
+.container__banner__3 .banner__3 h4 {
+    margin-left: 50px;
+    margin-bottom: 15px;
+}
+
+.container__banner__2 .banner__2 h4 {
+    margin-left: 50px;
+    margin-top: 1px;
+}
+
+.container__banner__1 .banner__1 p,
+.container__banner__2 .banner__2 p,
+.container__banner__3 .banner__3 p {
+    font-family: var(--font-family-poppins);
+    font-size: 16px;
+    color: var(--color-secondary);
+    font-weight: 400;
+    margin-left: 50px;
+    max-width: 300px;
+}
+.container__banner__1,
+.container__banner__2,
+.container__banner__3 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}

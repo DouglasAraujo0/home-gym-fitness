@@ -1,0 +1,124 @@
+.background__footer {
+    margin-top: 13vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 11vh 6vh 11vh;
+    background-color: rgba(242, 242, 242, 0.92);
+}
+
+.info__footer {
+    margin-top: 6vh;
+}
+
+.titulo__info__footer {
+    text-decoration: none;
+    font-family: var(--font-family-oswald);
+    color: var(--color-secondary);
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.texto__info__footer {
+    font-family: var(--font-family-poppins);
+    max-width: 410px;
+    margin-top: 2.5vh;
+}
+
+.redes__sociais__footer {
+    display: flex;
+    gap: 20px;
+    margin-top: 4vh;
+}
+
+.bi-footer {
+    background-color: var(--color-secondary);
+    color: #FFFFFF;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid var(--color-secondary);
+    transition: all 0.2s ease-in-out;
+}
+
+.bi-footer:hover {
+    background-color: #FFFFFF;
+    color: var(--color-secondary);
+}
+
+.our__service, .contact__us {
+    margin-top: 7vh;
+}
+
+.titulo__our__service {
+    padding: 0 0 24px;
+    font-family: var(--font-family-poppins);
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.lista__our__service {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+.lista__our__service li {
+    margin-top: 10px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.item__lista__our__service {
+    font-family: var(--font-family-poppins);
+    color: #000;
+    text-decoration: none;
+}
+
+.item__lista__our__service:hover {
+    text-decoration: underline;
+    color: var(--color-secondary);
+}
+
+.lista__our__service li:hover {
+    transform: translateX(10px);
+}
+
+.titulo__contact__us {
+    padding: 0 0 48px;
+    font-family: var(--font-family-poppins);
+    font-weight: 600;
+}
+
+.items__contact__us {
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    font-family: var(--font-family-poppins);
+    gap: 3vh;
+}
+
+.contact__item {
+    display: flex;
+    align-items: center;
+    gap: 5vh;
+    padding: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact__item:hover {
+    transform: translateX(10px);
+}
+
+.contact__item p {
+    margin: 0;
+    max-width: 320px;
+    transition: all 0.3s;
+}
+
+.contact__item p:hover {
+    color: var(--color-secondary);
+}
