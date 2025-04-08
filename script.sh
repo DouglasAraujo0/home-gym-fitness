@@ -1,6 +1,6 @@
 #!/bin/bash
 
-projeto="/opt/dev/projects/home-gym-fitness"
+projeto="/opt/dev/projects/projetosEvidencia/home-gym-fitness"
 nginx="/var/www/html"
 
 if [ -d "$projeto" ] && [ -d "$nginx" ]; then
