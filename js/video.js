@@ -2,7 +2,7 @@ export function iniciarVideo() {
     const botaoPlay = document.getElementById('playButton');
     const sobreposicaoVideo = document.getElementById('videoOverlay');
     const quadroVideo = document.getElementById('videoFrame');
-    const urlVideo = 'https://www.youtube.com/embed/kmcTEZTrsNg?si=lwzeS1-4UOsGScDK&autoplay=1';
+    const urlVideo = 'https://www.youtube.com/embed/axCKsbiH_4I?autoplay=1';
 
     botaoPlay.addEventListener('click', () => {
         sobreposicaoVideo.style.display = 'flex';
